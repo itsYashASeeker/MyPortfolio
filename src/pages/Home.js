@@ -152,9 +152,9 @@ function Home(){
         return async() => {
             typed.destroy();
             await delay(7000);
-            if(homep===1){
+            // if(homep===1){
                 document.getElementById("startBurstId").classList.remove("dNone");
-            }
+            // }
                 
         };
 
@@ -225,10 +225,10 @@ function Home(){
                     </div>
                 </div>
                 <div id="colorBurstid" className="colorBurst"></div>
-                {/* {(homep===1)?  */}
+                {(homep===1)? 
                     <button id="startBurstId" className="startBurst dNone" onClick={startB}>Start</button>
-                        {/* : <></> */}
-                {/* } */}
+                        : <></>
+                }
                 {/* {(homep===0 && scrollTop<=winHeight)? */}
                     <div id="mainContentid" className="mainContent revGoUp">
                         <span id="revealContentid" className="revealContent dNone"></span>
