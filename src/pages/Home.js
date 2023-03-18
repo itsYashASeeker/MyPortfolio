@@ -226,7 +226,7 @@ function Home(){
                 </div>
                 <div id="colorBurstid" className="colorBurst"></div>
                 {(homep===1)? 
-                    <button id="startBurstId" className="startBurst dNone" onClick={startB}>Start</button>
+                    <button id="startBurstId" className="startBurst" onClick={startB}>Start</button>
                         : <></>
                 }
                 {/* {(homep===0 && scrollTop<=winHeight)? */}
