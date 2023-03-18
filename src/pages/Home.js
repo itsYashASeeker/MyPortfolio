@@ -127,23 +127,13 @@ function Home(){
         
     });
 
-    useEffect(()=>{
+
+    useEffect(() => {
         var currentTheme = (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark": "light");
         if(currentTheme){
             document.documentElement.setAttribute('data-theme', currentTheme);
         }
-        const handleScroll = (event)=>{
-            
-        }
-        window.addEventListener("scroll", handleScroll);
 
-        return ()=>{
-            window.removeEventListener("scroll", handleScroll);
-        }
-
-    }, []);
-
-    useEffect(() => {
         const typed = new Typed(el.current, {
             strings: ["To the beautiful stars and brilliant brains of this world...", "Hello, I am Yash!"],
             typeSpeed: 50,
@@ -153,7 +143,7 @@ function Home(){
             typed.destroy();
             await delay(7000);
             // if(homep===1){
-                document.getElementById("startBurstId").classList.remove("dNone");
+            document.getElementById("startBurstId").classList.remove("dNone");
             // }
                 
         };
@@ -226,7 +216,7 @@ function Home(){
                 </div>
                 <div id="colorBurstid" className="colorBurst"></div>
                 {(homep===1)? 
-                    <button id="startBurstId" className="startBurst" onClick={startB}>Start</button>
+                    <button id="startBurstId" className="startBurst dNone" onClick={startB}>Start</button>
                         : <></>
                 }
                 {/* {(homep===0 && scrollTop<=winHeight)? */}
