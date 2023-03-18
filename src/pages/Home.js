@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import data from "../data";
 import Project from "../components/Project";
 import { logDOM } from "@testing-library/react";
+import { useNavigate } from "react-router-dom";
 
 function Home(){
 
@@ -16,6 +17,7 @@ function Home(){
     const [winHeight, setWinHeight] = useState(0);
     const [maxScroll, setMaxScroll] = useState(Math.round(winHeight)/2); 
     const [loaded, setLoaded] = useState(0);
+    const navigate = useNavigate();
 
     function delay(time){
         return new Promise(resolve=>setTimeout(resolve,time));
@@ -143,7 +145,7 @@ function Home(){
             typed.destroy();
             await delay(7000);
             // if(homep===1){
-            document.getElementById("startBurstId").classList.remove("dNone");
+            // document.getElementById("startBurstId").classList.remove("dNone");
             // }
                 
         };
@@ -157,9 +159,9 @@ function Home(){
                 {(homep===0)?
                     <>
                         <div id="contactmeid" className="contactme">
-                            <button><i className="fa-brands fa-github"></i></button>
-                            <button><i className="fa-brands fa-instagram"></i></button>
-                            <button><i className="fa-brands fa-linkedin-in"></i></button>
+                            <button><Link to="https://github.com/itsYashASeeker/"><i className="fa-brands fa-github"></i></Link></button>
+                            <button><Link to="https://www.instagram.com/yashck.iso/"><i className="fa-brands fa-instagram"></i></Link></button>
+                            <button><Link to="https://www.linkedin.com/in/yash-chauhan-180031203/"><i className="fa-brands fa-linkedin-in"></i></Link></button>
                         </div>
                         <div id="changeThemeId" className="changeThemediv">
                             <button className="changeTheme" onClick={changeThemeFunc}><span></span></button>
@@ -216,7 +218,7 @@ function Home(){
                 </div>
                 <div id="colorBurstid" className="colorBurst"></div>
                 {(homep===1)? 
-                    <button id="startBurstId" className="startBurst dNone" onClick={startB}>Start</button>
+                    <button id="startBurstId" className="startBurst" onClick={startB}>Start</button>
                         : <></>
                 }
                 {/* {(homep===0 && scrollTop<=winHeight)? */}
@@ -229,6 +231,10 @@ function Home(){
                         </div>
                     </div>
                 {/* } */}
+                {/* {(homep===0 && scrollTop>1)? 
+                    <button className="scrollToUp" onClick={()=>{window.scrollY=0;setScrollTop(0)}}><i className="fa-solid fa-angle-up"></i></button>
+                    : <></>
+                } */}
             </div>
         </>
     )

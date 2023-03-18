@@ -384,9 +384,21 @@ html[data-theme="dark"]{
     opacity: 1;
 }
 
+.scrollToUp{
+    position: fixed;
+    bottom: 1vh;
+    left: 1rem;
+    background: rgba(223, 223, 223, 0.411);
+    border: none;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
-
-
+.scrollToUp i{
+    font-size: 2rem;
+    color: var(--c1);
+}
 
 
 
