@@ -83,7 +83,7 @@ export default function SecP() {
                 const projectF = retId(el[0]).getBoundingClientRect();
                 var halfShiftPos = 35;
                 // console.log(retId("idProjectFolder").clientHeight);
-                retId(el[1]).style.top = `${projectF.y + retId(el[0]).clientHeight - 15}px`;
+                retId(el[1]).style.top = `${projectF.y + retId(el[0]).clientHeight / 2}px`;
                 retId(el[1]).style.left = `${projectF.x + retId(el[0]).clientWidth / 2}px`;
             }
 
