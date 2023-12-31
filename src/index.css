@@ -5,6 +5,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Texturina', serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
 }
 
@@ -114,6 +120,7 @@ body {
   /* background: grey; */
   width: 30vw;
   padding: 0.5rem 0.8rem;
+  padding: 0;
   /* border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem; */
   border-radius: 1rem;
@@ -143,10 +150,15 @@ body {
 .mH {
   text-align: left;
   font-size: 1.7rem;
-  padding: 0.1rem 0.2rem;
+  padding: 0.4rem 0.8rem;
+  padding-top: 0.4rem;
   /* background: red; */
+  width: fit-content;
+  /* background: rgba(255, 255, 255, 0.2); */
   width: 100%;
   font-family: 'Pixelify Sans', sans-serif;
+  margin-right: 3rem;
+  /* back */
 }
 
 .skillBoxs {
@@ -156,7 +168,7 @@ body {
   justify-content: start;
   row-gap: 0.5rem;
   column-gap: 0.7rem;
-  padding: 0.3rem 0.4rem;
+  padding: 1rem 0.8rem;
 }
 
 .skB {
@@ -209,7 +221,7 @@ body {
 .allWorks {
   width: 100%;
   /* background: red; */
-  padding: 1rem 0.3rem;
+  padding: 1rem 0.8rem;
   gap: 0.8rem;
 }
 
@@ -256,7 +268,7 @@ body {
   flex-wrap: wrap;
   width: 100%;
   gap: 1vw;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.8rem;
 
 }
 
@@ -325,6 +337,7 @@ body {
   font-size: 0.9rem;
 }
 
-.allEds{
+.allEds {
   width: 100%;
+  padding: 1rem 0.8rem;
 }

@@ -15,6 +15,7 @@ import "../src/index2.css";
 import "../src/media.css";
 import FolderIcon from "./assets/folder.png";
 import ResumeIcon from "./assets/resumeIcon.jpg";
+import GrabIcon from "./assets/grab.png";
 // import MyImage from "./assets/Yash Kamlesh Chauhan 2.png";
 import MyImage from "./assets/yash1.png";
 import { useEffect, useState } from "react";
@@ -132,10 +133,14 @@ export default function SecP() {
                             retId(softList[6][1]).style.zIndex = `${cc + 100}`;
                         }
                         }>
-                        <Draggable>
+                        <Draggable
+                            handle=".handle"
+                        >
                             <div className="divf fdirc c1 softWindow aboutMeWindow">
                                 <button className="closeSoft" onClick={() => { const vas = handleSoft(softList[6][0], softList[6][1], abtOpen); setAbtOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
-                                <p className="mH">#ABOUT ME</p>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#ABOUT ME</p>
+                                </div>
                                 <div className="divf fdirc aboutMeD">
                                     <p>Hey, I am Yash!</p>
                                     <p>A Developer from Mumbai.</p>
@@ -162,10 +167,15 @@ export default function SecP() {
                         }
                         }
                     >
-                        <Draggable>
+                        <Draggable
+                            handle=".handle"
+                        >
                             <div className="divf fdirc cProjects c1 softWindow softProject">
                                 <button className="closeSoft" onClick={() => { const vas = handleSoft("idProjectFolder", "idProjectSC", pOpen); setPOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
-                                <p className="mH">#PROJECTS</p>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#PROJECTS</p>
+                                </div>
+
                                 <div className="divf allProjects">
                                     <Link target="_blank" to="https://algo-vlab.kjsieit.com/" className="divf fdirc indProject projCard">
                                         <button className="goToSite"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
@@ -205,10 +215,14 @@ export default function SecP() {
                         }
                         }
                     >
-                        <Draggable>
+                        <Draggable
+                            handle=".handle"
+                        >
                             <div className="divf fdirc c1 softWindow">
                                 <button className="closeSoft" onClick={() => { const vas = handleSoft("idExperienceFolder", "idExperienceSC", expOpen); setExOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
-                                <p className="mH">#WORK EXPERIENCE</p>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#WORK EXPERIENCE</p>
+                                </div>
                                 <div className="divf fdirc allWorks">
                                     <div className="divf fdirc workCard">
                                         <div className="divf workMainH">
@@ -243,10 +257,14 @@ export default function SecP() {
                             retId("idEducationSC").style.zIndex = `${cc + 100}`;
                         }
                         }>
-                        <Draggable>
+                        <Draggable
+                            handle=".handle"
+                        >
                             <div className="divf fdirc c1 softWindow">
                                 <button className="closeSoft" onClick={() => { const vas = handleSoft("idEducationFolder", "idEducationSC", edOpen); setEdOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
-                                <p className="mH">#EDUCATION</p>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#EDUCATION</p>
+                                </div>
                                 <div className="divf fdirc allWorks allEds">
                                     <div className="divf fdirc workCard edBox">
                                         <div className="divf workMainH">
@@ -283,10 +301,14 @@ export default function SecP() {
                             retId(softList[3][1]).style.zIndex = `${cc + 100}`;
                         }
                         }>
-                        <Draggable>
+                        <Draggable
+                            handle=".handle"
+                        >
                             <div className="divf fdirc c1 softWindow">
                                 <button className="closeSoft" onClick={() => { const vas = handleSoft(softList[3][0], softList[3][1], cerOpen); setCerOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
-                                <p className="mH">#CERTIFICATIONS</p>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#CERTIFICATIONS</p>
+                                </div>
                                 <div className="divf fdirc allWorks allEds">
                                     <Link target="_blank" to="https://drive.google.com/file/d/1B0WS9D60b7ZVBOqSS2z7CtZ_3EcOUaoc/view?usp=sharing" className="divf fdirc workCard edBox certBox">
                                         <div className="divf workMainH">
@@ -332,10 +354,14 @@ export default function SecP() {
                             retId(softList[4][1]).style.zIndex = `${cc + 100}`;
                         }
                         }>
-                        <Draggable>
+                        <Draggable
+                            handle=".handle"
+                        >
                             <div className="divf fdirc c1 softWindow">
                                 <button className="closeSoft" onClick={() => { const vas = handleSoft(softList[4][0], softList[4][1], volOpen); setVolOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
-                                <p className="mH">#VOLUNTEERING</p>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#VOLUNTEERING</p>
+                                </div>
                                 <div className="divf fdirc allWorks allEds">
                                     <div className="divf fdirc workCard edBox certBox">
                                         <div className="divf workMainH">
@@ -375,10 +401,14 @@ export default function SecP() {
                             retId(softList[5][1]).style.zIndex = `${cc + 100}`;
                         }
                         }>
-                        <Draggable>
+                        <Draggable
+                            handle=".handle"
+                        >
                             <div className="divf fdirc c1 softWindow cSk1">
                                 <button className="closeSoft" onClick={() => { const vas = handleSoft(softList[5][0], softList[5][1], skOpen); setSkOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
-                                <p className="mH">#SKILLS</p>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#SKILLS</p>
+                                </div>
                                 <div className="divf skillBoxs">
                                     <div className="divf skB"><FontAwesomeIcon icon={faReact} className="fIconS" />React</div>
                                     <div className="divf skB"><FontAwesomeIcon icon={faNodeJs} className="fIconS" />Nodejs</div>
