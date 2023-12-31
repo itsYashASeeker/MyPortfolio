@@ -6,6 +6,31 @@
     .mypcDiv {
         align-items: start;
     }
+
+    .folderI {
+        width: 3rem;
+        margin: 0 0.6rem;
+    }
+
+    .leftCFolders {
+        width: 10rem;
+        padding: 1rem 0.7rem;
+    }
+    .rightCFolders{
+        width: fit-content;
+    }
+
+    .folderName {
+        font-size: 0.7rem;
+    }
+
+    .myFolder {
+        font-size: 1.1rem;
+    }
+
+    .myFolder .folderI {
+        width: 5rem;
+    }
 }
 
 @media (max-width: 350px) {
