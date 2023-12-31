@@ -1,0 +1,15 @@
+@media (max-width:500px) {
+    .fullbg1 {
+        background-image: url("../src/assets/mybg2.jpg");
+    }
+
+    .mypcDiv {
+        align-items: start;
+    }
+}
+
+@media (max-width: 350px) {
+    .mypc {
+        font-size: 1.1rem;
+    }
+}
