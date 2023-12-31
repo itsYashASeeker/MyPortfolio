@@ -6,7 +6,8 @@ import SqlLogo from "../src/assets/sql.png";
 import SolLogo from "../src/assets/sol.png";
 import DjangoRestLogo from "../src/assets/django-rest.png";
 import { faArrowUpRightFromSquare, faCode } from "@fortawesome/free-solid-svg-icons";
-import "../src/anim.css"
+import "../src/anim.css";
+import '../src/index.css';
 
 export default function Home() {
     return (

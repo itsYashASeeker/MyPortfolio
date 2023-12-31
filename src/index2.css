@@ -1,0 +1,146 @@
+.footerPC {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    padding-top: 0.4rem;
+    background: var(--b4);
+}
+
+.mypc {
+    font-size: 1.3rem;
+    color: rgb(202, 202, 202);
+}
+
+.myname {
+    font-size: 1rem;
+}
+
+.currTime {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+}
+
+.mainContent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background: rgba(255, 255, 255, 0.1); */
+    height: calc(100vh - 5rem);
+    z-index: 10;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.leftCFolders {
+    /* background: rgba(255, 255, 255, 0.596); */
+    /* height: 100%; */
+    padding: 1rem;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: start;
+    width: 15rem;
+    gap: 1rem;
+}
+
+.folderCard {
+    /* background: red; */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0.1rem);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.5rem;
+    border: 0.15rem solid rgba(255, 255, 255, 0.2);
+    transition: 0.2s all ease-out;
+    cursor: pointer;
+    color: white;
+
+}
+
+.folderCard:nth-child(2)::after {
+    /* box-shadow: 0 0 0.1rem 100rem grey; */
+    /* z-index: 10; */
+}
+
+/* .folderCard:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border: 0.15rem solid rgba(255, 255, 255, 0.25);
+} */
+
+/* .folderCard:focus {
+    background: white;
+} */
+.selectedFCard {
+    background: rgba(255, 255, 255, 0.3);
+    border: 0.15rem solid rgba(255, 255, 255, 0.4);
+    /* box-shadow: ; */
+}
+
+
+.folderI {
+    width: 4rem;
+    margin: 0 0.3rem;
+    /* height: 5rem; */
+}
+
+.fullWC {
+    justify-content: start;
+    width: 100%;
+}
+
+.myFolder {
+    font-size: 1.2rem;
+}
+
+.folderName {
+    font-size: 0.8rem;
+}
+
+.myFolder .folderI {
+    width: 6rem;
+}
+
+.allSoft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bringFrontD {
+    /* z-index: 5; */
+}
+
+.softCard {
+    position: absolute;
+    /* background: red; */
+    width: 0;
+    height: 0;
+    transition: 0.3s top, 0.3s left, 0.3s transform;
+    /* transition: 0.3s all ease-out; */
+    transform: translate(-50%, -50%) scale(0);
+    overflow: hidden;
+    z-index: 1000;
+    margin-top: 0;
+    width: fit-content;
+    height: fit-content;
+}
+
+.openCard {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(1);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* z-index: 10; */
+}
+
+.c1 {
+    pointer-events: all;
+}
