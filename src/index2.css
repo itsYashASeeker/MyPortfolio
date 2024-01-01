@@ -71,7 +71,8 @@ a {
     transition: 0.2s all ease-out;
     cursor: pointer;
     color: white;
-
+    height: 6.5rem;
+    width: 5.7rem;
 }
 
 .folderCard:nth-child(2)::after {
@@ -107,6 +108,8 @@ a {
 
 .myFolder {
     font-size: 1.2rem;
+    height: 9.5rem;
+    width: 8rem;
 }
 
 .folderName {
@@ -215,7 +218,7 @@ a {
 
 .aboutMeWindow {
     min-height: 0;
-    
+
 }
 
 .aboutMeD {
@@ -232,25 +235,25 @@ a {
     text-justify: inter-word;
 }
 
-.socialLinks{
+.socialLinks {
     margin-top: 0.5rem;
     gap: 0.5rem;
     font-size: 1.5rem;
 }
 
-.projectName{
+.projectName {
     font-size: 1.5rem;
 }
 
-.allProjects{
+.allProjects {
     gap: 1rem;
 }
 
-.handle{
-    cursor:move;
+.handle {
+    cursor: move;
 }
 
-.headerBCard{
+.headerBCard {
     width: 100%;
     background: rgba(255, 255, 255, 0.2);
     border-top-right-radius: 0.5rem;
