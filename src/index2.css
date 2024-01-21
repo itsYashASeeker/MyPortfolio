@@ -4,10 +4,10 @@
     left: 0;
     width: 100%;
     padding: 0.5rem 1rem;
-    padding-top: 0.4rem;
+    padding-top: 0.1rem;
     background: var(--b4);
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(0.1rem);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    backdrop-filter: blur(0.2rem);
 }
 
 a {
@@ -23,6 +23,7 @@ a {
 
 .myname {
     font-size: 1rem;
+    color: white;
 }
 
 .currTime {
@@ -32,6 +33,7 @@ a {
     right: 1rem;
     transform: translateY(-50%);
     font-size: 1.3rem;
+    color: white;
 }
 
 .mainContent {
@@ -63,8 +65,8 @@ a {
 
 .folderCard {
     /* background: red; */
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(0.1rem);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(0.3rem);
     padding: 0.2rem 0.4rem;
     border-radius: 0.5rem;
     border: 0.15rem solid rgba(255, 255, 255, 0.2);
@@ -177,10 +179,11 @@ a {
     outline: none;
     border-radius: 50%;
     cursor: pointer;
+    transition: 0.2s all ease-out;
 }
 
 .closeSoft:hover {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 0, 0, 0.4);
 }
 
 .softWindow {
@@ -213,6 +216,7 @@ a {
 }
 
 .certBox {
+    color: black;
     cursor: pointer;
 }
 
@@ -255,7 +259,24 @@ a {
 
 .headerBCard {
     width: 100%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.8);
+    /* backdrop-filter: blur(0.4rem); */
     border-top-right-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
+    transition: 0.2s all ease-out;
+}
+
+.headerBCard:hover {
+    /* background: rgba(255, 255, 255, 0.6); */
+}
+
+.allWCards {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0.3rem rgb(97, 97, 97);
+}
+
+.allWCards:hover {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(0.05rem);
+    box-shadow: 0 0 0.4rem 0.1rem rgb(97, 97, 97);
 }

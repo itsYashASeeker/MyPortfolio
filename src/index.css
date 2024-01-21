@@ -27,10 +27,9 @@
 }
 
 body {
-  background: rgba(41, 49, 50, 1);
-  background: rgb(26, 25, 25);
+  background: black;
   /* background: linear-gradient(red, blue); */
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .fullbg {
@@ -38,7 +37,9 @@ body {
   width: 100%;
 }
 
-
+a {
+  color: black;
+}
 
 .divf {
   display: flex;
@@ -116,7 +117,7 @@ body {
 }
 
 .c1 {
-
+  position: relative;
   /* background: grey; */
   width: 30vw;
   padding: 0.5rem 0.8rem;
@@ -125,19 +126,17 @@ body {
   border-bottom-right-radius: 1rem; */
   border-radius: 1rem;
 
-  border: 0.15rem solid var(--p5);
+  border: 0.2rem solid rgba(255, 255, 255, 0.8);
 
   background: var(--b2);
+  background: rgba(255, 255, 255, 0.4);
   transition: 0.3s all ease-out;
   backdrop-filter: blur(1rem);
-  box-shadow: 0 0 0.3rem rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
+  color: black;
+
 }
 
-.c1:hover {
-  border: 0.15rem solid var(--p3);
-  background: var(--b3);
-  box-shadow: 0 0 0.3rem rgba(255, 255, 255, 0.63);
-}
 
 .cSkills {
   transform: translateY(-0.15rem) translateX(-0.15rem);
@@ -158,6 +157,8 @@ body {
   width: 100%;
   font-family: 'Pixelify Sans', sans-serif;
   margin-right: 3rem;
+  /* backdrop-filter: blur(1rem); */
+  /* box-shadow: 0 0 0.3rem rgba(255, 255, 255, 0.5); */
   /* back */
 }
 
@@ -174,7 +175,7 @@ body {
 .skB {
   column-gap: 0.5rem;
   border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.4);
   border: 0.12rem solid rgba(255, 255, 255, 0.1);
   width: fit-content;
   padding: 0rem 0.6rem;
@@ -182,20 +183,23 @@ body {
   font-size: 1rem;
   cursor: default;
   transition: 0.2s all ease-out;
+  box-shadow: 0 0 0.3rem rgb(97, 97, 97);
 }
 
 .skB:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.5);
   border: 0.12rem solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0.4rem 0.1rem rgb(97, 97, 97);
 }
 
 .fIconS {
   transform: translateY(0.1rem);
-  color: white;
+  color: black;
 }
 
 .fImgS {
   /* width: 1rem; */
+  /* mix-blend-mode:darken; */
   height: 1rem;
   /* mix-blend-mode: lighten; */
 }
@@ -226,21 +230,24 @@ body {
 }
 
 .workCard {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.3);
   width: 100%;
   border-radius: 1.1rem;
   padding: 0.2rem 0.8rem;
   padding-bottom: 0.6rem;
   border: 0.15rem solid var(--p5);
-  transition: 0.3s all ease-out;
+  border: 0.15rem solid rgba(255, 255, 255, 0.5);
+  /* transition: 0.3s all ease-out; */
   cursor: default;
+  transition: 0.2s all ease-out;
+  box-shadow: 0 0 0.3rem rgb(97, 97, 97);
+  /* backdrop-filter: blur(0rem); */
 }
 
 .workCard:hover {
-  background: var(--b5);
-  background: rgba(255, 255, 255, 0.18);
-  border: 0.15rem solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 0.2rem white;
+  background: rgba(255, 255, 255, 0.5);
+  border: 0.15rem solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0.4rem 0.1rem rgb(97, 97, 97);
 }
 
 .workMainH {
@@ -283,13 +290,13 @@ body {
   /* height: 20rem; */
   min-height: 10rem;
   /* background: rgba(255, 255, 255, 0.15); */
-  background: var(--b1);
+  /* background: var(--b1); */
   border-radius: 1rem;
-  border: 0.2rem solid var(--p5);
+  border: 0.2rem solid rgba(235, 235, 235, 0.4);
   padding: 0.5rem;
   cursor: pointer;
   overflow: hidden;
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
@@ -303,7 +310,7 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
-  color: white;
+  color: rgb(26, 26, 26);
   transition: 0.3s all ease-out;
 }
 
@@ -321,12 +328,14 @@ body {
 
 .indProject:hover {
   gap: 0.5rem;
-  background: var(--b5);
+  /* background: var(--b5); */
+  /* background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(0.05rem); */
   border: 0.2rem solid white;
 }
 
 .indProject:hover .goToSite {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .indProject:hover .projectName {

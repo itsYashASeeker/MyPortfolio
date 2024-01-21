@@ -141,7 +141,7 @@ export default function SecP() {
                                 <div className="divf headerBCard">
                                     <p className="mH handle">#ABOUT ME</p>
                                 </div>
-                                <div className="divf fdirc aboutMeD">
+                                <div className="divf fdirc aboutMeD ">
                                     <p>Hey, I am Yash!</p>
                                     <p>A Developer from Mumbai.</p>
                                     <p>I have a keen interest in Blockchain & Web Development.</p>
@@ -172,37 +172,39 @@ export default function SecP() {
                         >
                             <div className="divf fdirc cProjects c1 softWindow softProject">
                                 <button className="closeSoft" onClick={() => { const vas = handleSoft("idProjectFolder", "idProjectSC", pOpen); setPOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
+
                                 <div className="divf headerBCard">
                                     <p className="mH handle">#PROJECTS</p>
                                 </div>
 
                                 <div className="divf allProjects">
-                                    <Link target="_blank" to="https://algo-vlab.kjsieit.com/" className="divf fdirc indProject projCard">
+                                    <Link target="_blank" to="https://algo-vlab.kjsieit.com/" className="divf fdirc indProject projCard allWCards">
                                         <button className="goToSite"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
                                         <p className="projectName">Algorithm Virtual lab</p>
                                         <p className="projectDesc">Learn Algorithms using Simulations and various examples</p>
                                     </Link>
-                                    <Link target="_blank" to="https://itsyashaseeker.github.io/Ultimate-digits/" className="divf fdirc indProject">
+                                    <Link target="_blank" to="https://itsyashaseeker.github.io/Ultimate-digits/" className="divf fdirc indProject allWCards">
                                         <button className="goToSite"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
                                         <p className="projectName">Ultimate Digits</p>
                                         <p className="projectDesc">Buy web3 mobile no. {"{Contributed to frontend (React)}"}</p>
                                     </Link>
-                                    <Link target="_blank" to="https://github.com/itsYashASeeker/blocksupp" className="divf fdirc indProject">
+                                    <Link target="_blank" to="https://github.com/itsYashASeeker/blocksupp" className="divf fdirc indProject allWCards">
                                         <button className="goToSite"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
                                         <p className="projectName">BlockSupp</p>
                                         <p className="projectDesc">Track your product's history using blockchain from Supplier to Customer {"{Solidity}"}</p>
                                     </Link>
-                                    <Link target="_blank" to="https://github.com/itsYashASeeker/Python-Projects" className="divf fdirc indProject">
+                                    <Link target="_blank" to="https://github.com/itsYashASeeker/Python-Projects" className="divf fdirc indProject allWCards">
                                         <button className="goToSite"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
                                         <p className="projectName">Python Projects</p>
                                         <p className="projectDesc">All projects I created in Python(games & guis)</p>
                                     </Link>
-                                    <Link target="_blank" to="https://todolists-pora.onrender.com/" className="divf fdirc indProject">
+                                    <Link target="_blank" to="https://todolists-pora.onrender.com/" className="divf fdirc indProject allWCards">
                                         <button className="goToSite"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
                                         <p className="projectName">Todo lists</p>
                                         <p className="projectDesc">A User Interactive Todo lists WebApp</p>
                                     </Link>
                                 </div>
+
                             </div>
                         </Draggable>
                     </div>
@@ -451,12 +453,12 @@ export default function SecP() {
                         <img src={FolderIcon} className="folderI" />
                         <p className="folderName">Experience</p>
                     </button>
-                    <button id="idEducationFolder" className="divf fdirc folderCard">
-                        <img src={FolderIcon} className="folderI" onClick={() => { const vas = handleSoft("idEducationFolder", "idEducationSC", edOpen); setEdOpen(vas); }} />
+                    <button id="idEducationFolder" className="divf fdirc folderCard" onClick={() => { const vas = handleSoft("idEducationFolder", "idEducationSC", edOpen); setEdOpen(vas); }}>
+                        <img src={FolderIcon} className="folderI" />
                         <p className="folderName">Education</p>
                     </button>
-                    <button id={softList[3][0]} className="divf fdirc folderCard">
-                        <img src={FolderIcon} className="folderI" onClick={() => { const vas = handleSoft(softList[3][0], softList[3][1], cerOpen); setCerOpen(vas); }} />
+                    <button id={softList[3][0]} className="divf fdirc folderCard" onClick={() => { const vas = handleSoft(softList[3][0], softList[3][1], cerOpen); setCerOpen(vas); }}>
+                        <img src={FolderIcon} className="folderI" />
                         <p className="folderName">Certifications</p>
                     </button>
                 </div>
