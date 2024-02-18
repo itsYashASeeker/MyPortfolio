@@ -164,7 +164,7 @@ a {
     width: 100%;
     transform: translate(0);
     /* background: rgba(255, 255, 255, 0.1); */
-    height: calc(100vh - 5rem);
+    height: calc(100% - 5rem);
     z-index: 10;
     justify-content: space-between;
     align-items: start;
@@ -255,7 +255,7 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100vh - 4rem);
+    height: calc(100% - 4rem);
     /* height: 100vh; */
 }
 
