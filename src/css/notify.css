@@ -1,0 +1,56 @@
+.notifY{
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.1);
+    height: 100%;
+    width: 100%;
+}
+
+.notContent{
+    width: fit-content;
+    height: fit-content;
+    background: white;
+    border: 0.2rem dashed black;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+}
+
+.notiP1{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: green;
+}
+
+.notiP1E{
+    color: red;
+}
+
+.notiP2{
+    font-size: 1.1rem;
+}
+
+.notBt{
+    /* margin-left: 100%; */
+    /* float: right; */
+    margin: 0.5rem 0;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+    font-size: 1rem;
+    border: none;
+    background: red;
+    color: white;
+}
+
+.notBt:hover{
+    opacity: 0.8;
+}
+
+.notBtSuccess{
+    background: green;
+    color: white;
+}

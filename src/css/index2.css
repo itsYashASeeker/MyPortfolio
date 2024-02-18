@@ -1,0 +1,411 @@
+.footerPC {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    padding-top: 0.1rem;
+    background: var(--b4);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(0.1rem);
+    z-index: 10;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mypcDiv{
+    /* justify-content: left; */
+    align-items: start;
+}
+
+.mypc {
+    font-size: 1rem;
+    color: rgb(202, 202, 202);
+}
+
+.myname {
+    font-size: 0.9rem;
+    color: white;
+    font-weight: bold;
+}
+
+.taskButs{
+    flex-grow: 1;
+    gap: 0.9rem;
+    height: 100%;
+    padding: 0.3rem;
+    /* margin-right: 5rem; */
+}
+
+.tasksApp{
+    position: relative;
+}
+
+.ttoolTip{
+    /* display: none; */
+    position: absolute;
+    top: -2.5rem;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    background: rgb(49, 49, 49);
+    color: white;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    opacity: 0;
+    transition: 0.2s all ease-out;
+    /* transition-delay: 0.2s; */
+    pointer-events: none;
+}
+
+.ttoolTip:after{
+    content: '';
+    position: absolute;
+    bottom: -0.3rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 0.6rem;
+    height: 0.6rem;
+    background: rgb(49, 49, 49);
+}
+
+
+.footTaskIcon{
+    /* width: 1rem; */
+    height: 1.8rem;
+}
+
+.taskB1{
+    position: relative;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer!important;
+    transition: 0.2s all ease-out;
+    background: rgb(213, 213, 213);
+}
+
+.taskB1 span{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -0.3rem;
+    height: 0.15rem;
+    width: 0;
+    background: rgb(255, 255, 255);
+    transition: 0.2s all ease-out;  
+}
+
+.activetaskBt{
+    background: white;
+    /* outline: 0.3rem dashed black; */
+    /* box-shadow: 0rem -0.15rem 0.1rem 0.15rem black; */
+    /* outline-offset: 0.1rem; */
+    cursor:auto !important;
+}
+
+.activetaskBt span{
+    width: 50%;
+    background: white;
+}
+
+
+
+.taskB1:hover{
+    background: rgb(255, 249, 249);
+    transform: translateY(-0.3rem);
+}
+
+.activetaskBt:hover{
+    background: rgb(255, 255, 255);
+    transform: translateY(0rem);
+}
+
+.tasksApp:hover .ttoolTip{
+    /* display: block; */
+    opacity: 1;
+    top: -3.5rem;
+}
+
+
+
+
+
+.taskB1:hover span{
+    width: 20%;
+}
+
+.activetaskBt:hover span{
+    width: 50%;
+}
+
+.currTime {
+    /* position: absolute; */
+    font-family: 'Pixelify Sans', sans-serif;
+    /* top: 50%; */
+    /* right: 1rem; */
+    /* transform: tran  slateY(-50%); */
+    font-size: 1.2rem;
+    color: white;
+    /* background: wheat; */
+    width: 5rem;
+}
+
+.mainContent {
+    position: fixed;
+    top: 0;
+    /* left: 0; */
+    width: 100%;
+    transform: translate(0);
+    /* background: rgba(255, 255, 255, 0.1); */
+    height: calc(100vh - 5rem);
+    z-index: 10;
+    justify-content: space-between;
+    align-items: start;
+    transition: 0.3s all ease-out;
+}
+
+
+.leftCFolders {
+    /* background: rgba(255, 255, 255, 0.596); */
+    /* height: 100%; */
+    padding: 1rem;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: start;
+    width: 15rem;
+    gap: 1rem;
+}
+
+.rightCFolders {
+    width: fit-content;
+}
+
+.folderCard {
+    /* background: red; */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(0.3rem);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.5rem;
+    border: 0.15rem solid rgba(255, 255, 255, 0.2);
+    transition: 0.2s all ease-out;
+    cursor: pointer;
+    color: white;
+    height: 6.5rem;
+    width: 5.7rem;
+}
+
+.folderCard:nth-child(2)::after {
+    /* box-shadow: 0 0 0.1rem 100rem grey; */
+    /* z-index: 10; */
+}
+
+/* .folderCard:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border: 0.15rem solid rgba(255, 255, 255, 0.25);
+} */
+
+/* .folderCard:focus {
+    background: white;
+} */
+.selectedFCard {
+    background: rgba(255, 255, 255, 0.3);
+    border: 0.15rem solid rgba(255, 255, 255, 0.4);
+    /* box-shadow: ; */
+}
+
+
+.folderI {
+    width: 4rem;
+    margin: 0 0.3rem;
+    /* height: 5rem; */
+}
+
+.fullWC {
+    justify-content: start;
+    width: 100%;
+}
+
+.fullWidth{
+    width:100%;
+}
+
+.myFolder {
+    font-size: 1.2rem;
+    height: 9.5rem;
+    width: 8rem;
+}
+
+.folderName {
+    font-size: 0.8rem;
+}
+
+.myFolder .folderI {
+    width: 6rem;
+}
+
+.allSoft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 4rem);
+    /* height: 100vh; */
+}
+
+.bringFrontD {
+    /* z-index: 5; */
+}
+
+.softCard {
+    position: absolute;
+    /* background: red; */
+    width: 0;
+    height: 0;
+    transition: 0.3s top, 0.3s left, 0.3s transform;
+    /* transition: 0.3s all ease-out; */
+    transform: translate(-50%, -50%) scale(0);
+    overflow: hidden;
+    z-index: 1000;
+    margin-top: 0;
+    width: fit-content;
+    height: fit-content;
+}
+
+.openCard {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(1);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* z-index: 10; */
+}
+
+.c1 {
+    pointer-events: all;
+    overflow: auto;
+    justify-content: start;
+    align-items: start;
+}
+
+.closeSoft {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.8rem;
+    padding: 0.2rem 0.4rem;
+    padding-top: 0;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s all ease-out;
+}
+
+.closeSoft:hover {
+    background: rgba(255, 0, 0, 0.4);
+}
+
+.softWindow {
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    min-width: 40vw;
+    min-height: 40vh;
+    width: fit-content;
+}
+
+.cWork {
+    transform: translateY(0);
+    /* border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    gap: 0.5rem;
+    padding-bottom: 1rem; */
+    border: 0.15rem solid var(--p5);
+}
+
+.projCard {
+    /* width: ; */
+    /* width: 35vw; */
+}
+
+.cSk1 {
+    max-width: clamp(10rem, 40rem, 90vw) !important;
+    min-height: fit-content;
+
+}
+
+.certBox {
+    color: black;
+    cursor: pointer;
+}
+
+.aboutMeWindow {
+    min-height: 0;
+
+}
+
+.aboutMeD {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
+    text-align: justify;
+    text-justify: inter-word;
+    width: 100%;
+}
+
+.aboutMeD p {
+    width: 100%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.socialLinks {
+    margin-top: 0.5rem;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.projectName {
+    font-size: 1.5rem;
+}
+
+.allProjects {
+    gap: 1rem;
+}
+
+.handle {
+    cursor: move;
+}
+
+.headerBCard {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    /* backdrop-filter: blur(0.4rem); */
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    transition: 0.2s all ease-out;
+}
+
+.headerBCard:hover {
+    /* background: rgba(255, 255, 255, 0.6); */
+}
+
+.allWCards {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0.3rem rgb(97, 97, 97);
+}
+
+.allWCards:hover {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(0.05rem);
+    box-shadow: 0 0 0.4rem 0.1rem rgb(97, 97, 97);
+}

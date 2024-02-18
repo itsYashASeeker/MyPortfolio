@@ -1,0 +1,49 @@
+.allBigApps{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: calc(100vh - 5rem);
+    transition: 0.3s all ease-out;
+}
+
+.backLeftPlace{
+    /* left: 1rem; */
+}
+
+.backToHome{
+    position: fixed;
+    top: 1rem;
+    /* right: 1rem; */
+    width: calc(100% - 2rem);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    backdrop-filter: blur(0.6rem);
+    cursor: pointer;
+    transition: 0.2s all ease-out;
+}
+
+.backToHome:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.goLeft{
+    /* right: 100%; */
+    transform: translateX(-100%);
+}
+
+.goRight{
+    /* left: 100%; */
+    transform: translateX(100%);
+}
+
+.goUp{
+    bottom: 100%;
+}
+
+.goDown{
+    top: 100%;
+}

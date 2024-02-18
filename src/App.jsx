@@ -1,7 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes, redirect, useNavigate } from "react-router-dom"
 import Home from "./Home"
 import SecP from "./SecP"
-
+import "../src/css/App.css";
 
 function App() {
 
