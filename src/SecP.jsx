@@ -2,10 +2,12 @@ import "../src/css/anim.css";
 import "../src/css/index.css";
 import "../src/css/bg1.css";
 import "../src/css/index2.css";
-import "../src/css/media.css";
+
 import "../src/css/workO.css";
 import "../src/css/whyme.css";
 import "../src/css/transit.css";
+
+import "../src/css/media.css";
 
 import DiamondImg from "../src/assets/diamond/Dimond_alt_duotone.svg";
 import EmailImg from "../src/assets/email.svg";

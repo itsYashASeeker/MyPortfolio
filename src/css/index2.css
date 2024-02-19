@@ -198,7 +198,7 @@ a {
     cursor: pointer;
     color: white;
     height: 6.5rem;
-    width: 5.7rem;
+    width: 6rem;
 }
 
 .folderCard:nth-child(2)::after {
@@ -243,7 +243,8 @@ a {
 }
 
 .folderName {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .myFolder .folderI {

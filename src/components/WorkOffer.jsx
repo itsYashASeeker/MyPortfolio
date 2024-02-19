@@ -110,6 +110,13 @@ Best regards,
     }, [offerOption])
 
     const sendMail = async (subject, body, senderEmail) => {
+        const offOption = offerOption==1 ? "Internship":"Freelancing Projects"; 
+        var dets = {
+            name: sname,
+            email: semail,
+            company: scomp
+        }
+        body=`${body}\n\nDetails of the sender: \nName: ${dets.name}\nEmail: ${dets.email}\nCompany Name: ${dets.company}\nOffer option: ${offOption}`;
         setMailload(10);
         try {
           await axios
@@ -123,8 +130,15 @@ Best regards,
             setMailload(true);
             })
             .catch((err) => {
-            //   console.log(err.message);
-            setMailload(9);
+            //   console.log();
+            if(err.response.data.error[0] && err.response.data.error[0].startsWith("You have provided") ){
+                // setMailload(err.response.data.error[0]);
+                setMailload(8);
+            }
+            else{
+                setMailload(9);
+            }
+            
             });
         } catch (error) {
           console.log(error);
@@ -232,11 +246,11 @@ Best regards,
     :
     <></>
     }
-    {mailLoad==9 ? 
+    {mailLoad==9 || mailLoad==8 ? 
         <div className="divf notifY">
         <div className="notContent">
-            <p className="notiP1 notiP1E" >Some error occurred</p>
-            <p className="notiP2">Please try again later!</p>
+            <p className="notiP1 notiP1E" >{mailLoad==9? "Some error occurred": "The email address was not correct!"}</p>
+            <p className="notiP2">{mailLoad==9? "Please try again later": "Please enter a valid email address!"}</p>
             <button className="notBt" onClick={()=>{
                 setMailload(0)
             // setBodyData(textBD);

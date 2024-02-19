@@ -3,7 +3,7 @@ export default function WhyMe(){
         <>
         <div className="whyMeBB">
         <div className="divf fdirc whyMeFBG">
-            <p className="whyMTitle">Why should you chose me for your project/internship?</p>
+            <p className="whyMTitle">Why should you choose me for your project/internship?</p>
             <ul>
                 <li>
                 <b>Unwavering Dedication:</b> I commit wholeheartedly to every project, ensuring that each task receives my utmost attention and effort.
