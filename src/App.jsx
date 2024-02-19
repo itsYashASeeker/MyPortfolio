@@ -2,12 +2,12 @@ import { BrowserRouter, Navigate, Route, Routes, redirect, useNavigate } from "r
 import Home from "./Home"
 import SecP from "./SecP"
 import "../src/css/App.css";
+import axios from "axios";
 
 function App() {
 
   function RedirectHome() {
-    // const navigate = useNavigate();
-    // navigate("/");
+
     return (
       <Navigate to="/" />
     )

@@ -256,7 +256,7 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 4rem);
+    height: calc(100% - 0rem);
     /* height: 100vh; */
 }
 

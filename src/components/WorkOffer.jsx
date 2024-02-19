@@ -125,7 +125,11 @@ Best regards,
               bodyE: body,
               sendEmail: senderEmail,
               sendName: dets.name
-            })
+            },
+            {headers: {
+                'Content-Type': 'application/json',
+              }}
+            )
             .then((res) => {
             //   console.log(res.data);
             setMailload(true);
@@ -141,6 +145,23 @@ Best regards,
             }
             
             });
+            // const response = await fetch(`/api/y/portfolio/sendemail`, {
+            //     method: 'POST',
+            //     body: JSON.stringify({
+            //               subjectE: subject,
+            //               bodyE: body,
+            //               sendEmail: senderEmail,
+            //               sendName: dets.name
+            //             }),
+            //             headers: {
+            //                         'Content-Type': 'application/json',
+            //                       }
+            //   })
+           
+            //   // Handle response if necessary
+            //   const data = await response.json()
+            //   console.log(data);
+          
         } catch (error) {
           console.log(error);
         }
