@@ -21,7 +21,8 @@
     color: white;
     height: calc(100% - 5rem);
     justify-content: start;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .workD11{
