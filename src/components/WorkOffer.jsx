@@ -124,6 +124,7 @@ Best regards,
               subjectE: subject,
               bodyE: body,
               sendEmail: senderEmail,
+              sendName: dets.name
             })
             .then((res) => {
             //   console.log(res.data);
