@@ -17,7 +17,7 @@ a {
     cursor: pointer;
 }
 
-.mypcDiv{
+.mypcDiv {
     /* justify-content: left; */
     align-items: start;
 }
@@ -33,7 +33,7 @@ a {
     font-weight: bold;
 }
 
-.taskButs{
+.taskButs {
     flex-grow: 1;
     gap: 0.9rem;
     height: 100%;
@@ -41,11 +41,11 @@ a {
     /* margin-right: 5rem; */
 }
 
-.tasksApp{
+.tasksApp {
     position: relative;
 }
 
-.ttoolTip{
+.ttoolTip {
     /* display: none; */
     position: absolute;
     top: -2.5rem;
@@ -63,7 +63,7 @@ a {
     pointer-events: none;
 }
 
-.ttoolTip:after{
+.ttoolTip:after {
     content: '';
     position: absolute;
     bottom: -0.3rem;
@@ -75,23 +75,23 @@ a {
 }
 
 
-.footTaskIcon{
+.footTaskIcon {
     /* width: 1rem; */
     height: 1.8rem;
 }
 
-.taskB1{
+.taskB1 {
     position: relative;
     padding: 0.8rem;
     border-radius: 1rem;
     border: none;
     font-size: 1rem;
-    cursor: pointer!important;
+    cursor: pointer !important;
     transition: 0.2s all ease-out;
     background: rgb(213, 213, 213);
 }
 
-.taskB1 span{
+.taskB1 span {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -99,35 +99,35 @@ a {
     height: 0.15rem;
     width: 0;
     background: rgb(255, 255, 255);
-    transition: 0.2s all ease-out;  
+    transition: 0.2s all ease-out;
 }
 
-.activetaskBt{
+.activetaskBt {
     background: white;
     /* outline: 0.3rem dashed black; */
     /* box-shadow: 0rem -0.15rem 0.1rem 0.15rem black; */
     /* outline-offset: 0.1rem; */
-    cursor:auto !important;
+    cursor: auto !important;
 }
 
-.activetaskBt span{
+.activetaskBt span {
     width: 50%;
     background: white;
 }
 
 
 
-.taskB1:hover{
+.taskB1:hover {
     background: rgb(255, 249, 249);
     transform: translateY(-0.3rem);
 }
 
-.activetaskBt:hover{
+.activetaskBt:hover {
     background: rgb(255, 255, 255);
     transform: translateY(0rem);
 }
 
-.tasksApp:hover .ttoolTip{
+.tasksApp:hover .ttoolTip {
     /* display: block; */
     opacity: 1;
     top: -3.5rem;
@@ -137,11 +137,11 @@ a {
 
 
 
-.taskB1:hover span{
+.taskB1:hover span {
     width: 20%;
 }
 
-.activetaskBt:hover span{
+.activetaskBt:hover span {
     width: 50%;
 }
 
@@ -189,16 +189,16 @@ a {
 
 .folderCard {
     /* background: red; */
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(0.3rem);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2rem);
     padding: 0.2rem 0.4rem;
     border-radius: 0.5rem;
     border: 0.15rem solid rgba(255, 255, 255, 0.2);
     transition: 0.2s all ease-out;
     cursor: pointer;
     color: white;
-    height: 6.5rem;
-    width: 6rem;
+    height: 6rem;
+    width: 5.5rem;
 }
 
 .folderCard:nth-child(2)::after {
@@ -215,14 +215,14 @@ a {
     background: white;
 } */
 .selectedFCard {
-    background: rgba(255, 255, 255, 0.3);
-    border: 0.15rem solid rgba(255, 255, 255, 0.4);
+    /* background: rgba(255, 255, 255, 0.3); */
+    border-bottom: 0.15rem solid rgba(255, 255, 255, 0.9);
     /* box-shadow: ; */
 }
 
 
 .folderI {
-    width: 4rem;
+    width: 3.5rem;
     margin: 0 0.3rem;
     /* height: 5rem; */
 }
@@ -232,8 +232,8 @@ a {
     width: 100%;
 }
 
-.fullWidth{
-    width:100%;
+.fullWidth {
+    width: 100%;
 }
 
 .myFolder {
@@ -243,7 +243,7 @@ a {
 }
 
 .folderName {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 600;
 }
 

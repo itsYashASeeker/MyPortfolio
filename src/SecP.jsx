@@ -38,7 +38,7 @@ import { Link, useNavigate } from "react-router-dom";
 //       backgroundColor: theme.palette.common.black,
 //     },
 //   }));
-  
+
 
 export default function SecP() {
 
@@ -48,52 +48,52 @@ export default function SecP() {
 
     const [currApp, setCurrApp] = useState(0);
 
-    function delayTime(millisec) { 
-        return new Promise(resolve => { 
-            setTimeout(() => { resolve('') }, millisec); 
-        }) 
-    } 
+    function delayTime(millisec) {
+        return new Promise(resolve => {
+            setTimeout(() => { resolve('') }, millisec);
+        })
+    }
 
-    useEffect(()=>{
+    useEffect(() => {
         const dapp = currApp;
-        if(dapp==0){
-            for(var i=1;i<5;i++){
-                if(retId(`idTaskBt${i}`)){
-                    retId(`idTaskBt${i}`).disabled=false;
+        if (dapp == 0) {
+            for (var i = 1; i < 5; i++) {
+                if (retId(`idTaskBt${i}`)) {
+                    retId(`idTaskBt${i}`).disabled = false;
                     retId(`taskOutB${i}`).classList.add("tasksApp");
                     retId(`idTaskBt${i}`).classList.remove("activetaskBt");
                 }
             }
             return;
         }
-        retId(`idTaskBt${dapp}`).disabled=true;
+        retId(`idTaskBt${dapp}`).disabled = true;
         retId(`taskOutB${dapp}`).classList.remove("tasksApp");
         retId(`idTaskBt${dapp}`).classList.add("activetaskBt");
     }, [currApp]);
 
-    async function setDefaultAppPos(){
+    async function setDefaultAppPos() {
         const dApp = currApp;
-     
-        if(dApp==0){
+
+        if (dApp == 0) {
             return;
         }
         // else if(dApp==1){
 
         // }
-        else if(dApp==2){
+        else if (dApp == 2) {
             // window.alert(dApp);
             retId("idWorkOffer").classList.add("goLeft");
             await delayTime(200);
             retId("idMainContent").classList.remove("goRight");
         }
-        else if(dApp==3){
-            
+        else if (dApp == 3) {
+
             // delayTime(100);
             retId("idWhyMe").classList.add("goRight");
             await delayTime(200);
-            retId("idMainContent").classList.remove("goLeft");  
+            retId("idMainContent").classList.remove("goLeft");
         }
-        retId(`idTaskBt${dApp}`).disabled=false;
+        retId(`idTaskBt${dApp}`).disabled = false;
         retId(`taskOutB${dApp}`).classList.add("tasksApp");
         retId(`idTaskBt${dApp}`).classList.remove("activetaskBt");
         // await delayTime(300);
@@ -112,34 +112,35 @@ export default function SecP() {
             </div>
             <div id="idLetsConnect" className="divf notifY dNone">
                 <div className="notContent">
-                    <p className="" style={{width:"100%",marginBottom:"1rem"}} >/in/yash-chauhan-180031203/</p>
-                    <Link className="notBt notBtSuccess fullWidth" style={{width:"100%",marginTop:"1rem"}}
-                    onClick={()=>{retId("idLetsConnect").classList.add("dNone");
-                    // setCurrApp(0);
-                }}
-                to="https://www.linkedin.com/in/yash-chauhan-180031203/"
-                target="_blank"
+                    <p className="" style={{ width: "100%", marginBottom: "1rem" }} >/in/yash-chauhan-180031203/</p>
+                    <Link className="notBt notBtSuccess fullWidth" style={{ width: "100%", marginTop: "1rem" }}
+                        onClick={() => {
+                            retId("idLetsConnect").classList.add("dNone");
+                            // setCurrApp(0);
+                        }}
+                        to="https://www.linkedin.com/in/yash-chauhan-180031203/"
+                        target="_blank"
                     >Lets Connect on Linkedin</Link>
                 </div>
             </div>
             <div id="idWorkOffer" className="divf fullWorkOffer allBigApps goLeft">
                 <button className="backToHome"
-                onClick={()=>{
-                    setCurrApp(0);
-                    retId("idMainContent").classList.remove("goRight");        
-                    retId("idWorkOffer").classList.add("goLeft");
-                }}
+                    onClick={() => {
+                        setCurrApp(0);
+                        retId("idMainContent").classList.remove("goRight");
+                        retId("idWorkOffer").classList.add("goLeft");
+                    }}
                 >Back to Home <FontAwesomeIcon icon={faArrowRight} /></button>
-                <WorkOffer/>
+                <WorkOffer />
             </div>
             <div id="idWhyMe" className="divf fullWhyMebg allBigApps goRight">
                 <button className="backLeftPlace backToHome"
-                onClick={()=>{
-                    setCurrApp(0);
-                    retId("idMainContent").classList.remove("goLeft");        
-                    retId("idWhyMe").classList.add("goRight");
-                    
-                }}
+                    onClick={() => {
+                        setCurrApp(0);
+                        retId("idMainContent").classList.remove("goLeft");
+                        retId("idWhyMe").classList.add("goRight");
+
+                    }}
                 ><FontAwesomeIcon icon={faArrowLeft} /> Back to Home</button>
                 <WhyMe />
             </div>
@@ -147,9 +148,10 @@ export default function SecP() {
                 <div className="notContent">
                     <p className="notiP1" >Coming soon</p>
                     <button className="notBt notBtSuccess"
-                    onClick={()=>{retId("idLetsLearn").classList.add("dNone");
-                    // setCurrApp(0);
-                }}
+                        onClick={() => {
+                            retId("idLetsLearn").classList.add("dNone");
+                            // setCurrApp(0);
+                        }}
                     >OK</button>
                 </div>
             </div>
@@ -168,7 +170,7 @@ export default function SecP() {
                 </div>
             </div> */}
             <div className="divf footerPC">
-                <div  className="divf fdirc mypcDiv">
+                <div className="divf fdirc mypcDiv">
                     <p className="mypc">My Personal Computer</p>
                     <p className="myname">Yash Kamlesh Chauhan</p>
                 </div>
@@ -178,69 +180,69 @@ export default function SecP() {
                     {/* <BootstrapTooltip title="Connect with me!"> */}
                     <div id="taskOutB1" className="tasksApp">
                         <button className="divf ttb1 taskB1"
-                        id="idTaskBt1"
-                        onClick={async()=>{
-                            // setCurrApp(4);
-                            retId("idLetsConnect").classList.remove("dNone");
-                            return;
-                            // await setDefaultAppPos()
-                        }}
+                            id="idTaskBt1"
+                            onClick={async () => {
+                                // setCurrApp(4);
+                                retId("idLetsConnect").classList.remove("dNone");
+                                return;
+                                // await setDefaultAppPos()
+                            }}
                         ><img className="footTaskIcon" src={ConnectImg} /><span></span></button>
                         <div className="ttoolTip">Connect with me!</div>
                     </div>
                     <div id="taskOutB2" className="tasksApp">
                         <button className="divf ttb1 taskB1"
-                        id="idTaskBt2"
-                        onClick={async()=>{
-                            await setDefaultAppPos()
-                            setCurrApp(2);
-                            // delayTime(1000);
-                            retId("idMainContent").classList.add("goRight");
-                            
-                            retId("idWorkOffer").classList.remove("goLeft");
-                            
-                            // retId("idTaskBtWorkOffer")
-                        }}
+                            id="idTaskBt2"
+                            onClick={async () => {
+                                await setDefaultAppPos()
+                                setCurrApp(2);
+                                // delayTime(1000);
+                                retId("idMainContent").classList.add("goRight");
+
+                                retId("idWorkOffer").classList.remove("goLeft");
+
+                                // retId("idTaskBtWorkOffer")
+                            }}
                         ><img className="footTaskIcon" src={EmailImg} /><span></span></button>
-                        <div className="ttoolTip">I have work for you!</div>
+                        <div className="ttoolTip">Open to Work</div>
                     </div>
                     <div id="taskOutB3" className="tasksApp">
                         <button className="divf ttb1 taskB1"
-                         id="idTaskBt3"
-                         onClick={async()=>{
-                            await setDefaultAppPos()
-                            // delayTime(1000);
-                            setCurrApp(3);
-                             retId("idMainContent").classList.add("goLeft");
-                            
-                             retId("idWhyMe").classList.remove("goRight");
-                             
-                             // retId("idTaskBtWorkOffer")
-                         }}
+                            id="idTaskBt3"
+                            onClick={async () => {
+                                await setDefaultAppPos()
+                                // delayTime(1000);
+                                setCurrApp(3);
+                                retId("idMainContent").classList.add("goLeft");
+
+                                retId("idWhyMe").classList.remove("goRight");
+
+                                // retId("idTaskBtWorkOffer")
+                            }}
                         ><img className="footTaskIcon" src={DiamondImg} /><span></span></button>
                         <div className="ttoolTip">Why me?</div>
                     </div>
                     <div id="taskOutB4" className="tasksApp">
                         <button
-                        id="idTaskBt4"
-                        className="divf ttb1 taskB1"
-                        onClick={async()=>{
-                            // setCurrApp(4);
-                            retId("idLetsLearn").classList.remove("dNone");
-                            return;
-                            // await setDefaultAppPos()
-                        }}
+                            id="idTaskBt4"
+                            className="divf ttb1 taskB1"
+                            onClick={async () => {
+                                // setCurrApp(4);
+                                retId("idLetsLearn").classList.remove("dNone");
+                                return;
+                                // await setDefaultAppPos()
+                            }}
                         ><img className="footTaskIcon" src={LearnImg} /><span></span></button>
                         <div className="ttoolTip">Let's learn together!</div>
                     </div>
                     {/* </BootstrapTooltip> */}
-                    
-                    
-                    
-                    
-                    
+
+
+
+
+
                     {/* <button className="taskB1">Let's learn together<span></span></button> */}
-                    
+
                 </div>
                 <div id="idCurrentTime" className="currTime">14:48:11</div>
             </div>
