@@ -1,6 +1,4 @@
-
-
-.fullWorkOffer{
+.fullWorkOffer {
     /* background: rgba(255, 255, 255, 0.313); */
     /* right: 0; */
     /* width: 100vw; */
@@ -11,7 +9,7 @@
     align-items: start;
 }
 
-.workOfBg{
+.workOfBg {
     margin: 4rem 0;
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(2rem);
@@ -25,7 +23,7 @@
     overflow-x: hidden;
 }
 
-.workD11{
+.workD11 {
     flex-wrap: wrap;
     font-size: 1.5rem;
     color: rgb(255, 255, 255);
@@ -34,30 +32,30 @@
     /* background: white; */
 }
 
-.workD12{
+.workD12 {
     font-size: 1.6rem;
     color: rgb(208, 255, 206);
     font-weight: 650;
 }
 
-.wdivider{
+.wdivider {
     width: 100%;
     height: 0.1rem;
     background: rgb(218, 218, 218);
     margin: 1rem 0;
 }
 
-.draftEm{
+.draftEm {
     min-width: 50vw;
     width: 100%;
-    width: clamp(40vw, 60rem,calc(100vw - 4rem));
+    width: clamp(40vw, 60rem, calc(100vw - 4rem));
     border: 0.15rem solid rgb(228, 228, 228);
     border-radius: 0.5rem;
     background: rgba(255, 255, 255, 0.3);
     /* backdrop-filter: blur(0.rem); */
 }
 
-.deTitle{
+.deTitle {
     justify-content: start;
     flex-wrap: wrap;
     width: 100%;
@@ -68,7 +66,7 @@
     gap: 0.5rem;
 }
 
-.deTitle button{
+.deTitle button {
 
     border: none;
     padding: 0.2rem 0.4rem;
@@ -81,18 +79,18 @@
     transition: 0.2s all ease-out;
 }
 
-.deTitle .activebt{
+.deTitle .activebt {
     background: rgb(73, 73, 73);
     color: white;
     font-weight: 600;
 }
 
-.deSendInsD{
+.deSendInsD {
     gap: 0.5rem;
     padding: 0.6rem 0.5rem;
 }
 
-.deSendD{
+.deSendD {
     width: 100%;
     padding: 0.3rem 0.4rem;
     border-radius: 0.3rem;
@@ -104,12 +102,13 @@
     outline-offset: 0.1rem;
 }
 
-.deSendD:focus, .inDemainCont:focus{
+.deSendD:focus,
+.inDemainCont:focus {
     outline: 0.13rem dashed black;
     outline-offset: 0.1rem;
 }
 
-.demainC{
+.demainC {
     /* border-top: 0.13rem solid rgb(112, 112, 112);
     border-bottom: 0.13rem solid rgb(112, 112, 112); */
     padding: 0.7rem 0.5rem;
@@ -124,19 +123,19 @@
     width: calc(100% - 1rem);
 }
 
-.inDemainC{
+.inDemainC {
     position: relative;
     align-items: start;
     justify-content: start;
     /* text-overflow: clip; */
 }
 
-.inDemainTitle{
+.inDemainTitle {
     min-width: 5rem;
     font-weight: 600;
 }
 
-.inDemainCont{
+.inDemainCont {
     position: relative;
     flex-grow: 2;
     width: 100%;
@@ -153,19 +152,19 @@
     outline-offset: 0.1rem;
 }
 
-.inDeContent{
+.inDeContent {
 
     /* text-overflow: clip; */
 }
 
-.editableIcon{
+.editableIcon {
     position: absolute;
     top: 0rem;
     right: 0rem;
     font-size: 0.9rem;
 }
 
-.genData{
+.genData {
     background: rgba(245, 245, 245, 0.685);
     border-radius: 0.4rem;
     padding: 0.3rem;
@@ -175,17 +174,17 @@
     cursor: pointer;
 }
 
-.divSend{
+.divSend {
     /* justify-content: end; */
     padding: 0.8rem 0.5rem;
 }
 
-.divSend button:disabled{
+.divSend button:disabled {
     opacity: 0.6;
     cursor: auto;
 }
 
-.divSend button{
+.divSend button {
     background: green;
     font-size: 1rem;
     border: 0;
@@ -200,13 +199,13 @@
 
 
 /* Why me */
-.whyMeBB{
+.whyMeBB {
     height: 100%;
     width: 100%;
     padding: 1rem;
 }
 
-.whyMeFBG{
+.whyMeFBG {
     justify-content: start;
     margin-top: 4rem;
     background: rgba(255, 255, 255, 0.25);
@@ -219,24 +218,34 @@
     padding: 1rem;
 }
 
-.whyMTitle{
+.whyMTitle {
     font-size: 1.7rem;
     color: white;
     font-weight: bold;
     text-decoration: underline;
 }
 
-.whyMeFBG ul{
+.whyMeFBG ul {
     color: white;
     font-size: 1.2rem;
     padding: 1rem 1rem;
     padding-left: 1.5rem;
 }
 
-.whyMeFBG li{
+.whyMeFBG li {
     margin: 0.5rem 0;
 }
 
-.dNone{
+.dNone {
     display: none;
+}
+
+.letsConnectLinkText,
+.letsConnectLinkText * {
+    -webkit-touch-callout: auto;
+    -webkit-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: text;
 }

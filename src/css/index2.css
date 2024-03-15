@@ -217,6 +217,7 @@ a {
 .selectedFCard {
     /* background: rgba(255, 255, 255, 0.3); */
     border-bottom: 0.15rem solid rgba(255, 255, 255, 0.9);
+    /* border-top: 0.15rem solid rgba(255, 255, 255, 0.9); */
     /* box-shadow: ; */
 }
 
@@ -320,7 +321,7 @@ a {
     max-width: 90vw !important;
     max-height: 90vh !important;
     min-width: 40vw;
-    min-height: 40vh;
+    min-height: 1vh;
     width: fit-content;
 }
 

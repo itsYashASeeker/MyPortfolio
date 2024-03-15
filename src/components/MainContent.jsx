@@ -21,7 +21,7 @@ import GrabIcon from "../assets/grab.png";
 import MyImage from "../assets/yash1.png";
 import { useEffect, useState } from "react";
 import Draggable from "react-draggable";
-import { experience, projects } from "../data/data";
+import { certifications, education, experience, projects, volunteering } from "../data/data";
 
 
 export default function MainContent() {
@@ -245,33 +245,23 @@ export default function MainContent() {
                                 <p className="mH handle">#EDUCATION</p>
                             </div>
                             <div className="divf fdirc allWorks allEds">
-                                <div className="divf fdirc workCard edBox">
-                                    <div className="divf workMainH">
-                                        <p className="position-name">B.Tech Computer Science</p>
-                                        <p className="timesWork">Dec,2021 - Ongoing</p>
-                                    </div>
-                                    <p className="company-name">KJ Somaiya Institute of Technology</p>
-                                </div>
-
-                                <div className="divf fdirc workCard edBox">
-                                    <div className="divf workMainH">
-                                        <p className="position-name">12th Science</p>
-                                        <p className="timesWork">Completed Aug,2021</p>
-                                    </div>
-                                    <p className="company-name">KJ Somaiya Junior College of Science and Commerce</p>
-                                </div>
-                                <div className="divf fdirc workCard edBox">
-                                    <div className="divf workMainH">
-                                        <p className="position-name">10th</p>
-                                        <p className="timesWork">Completed Mar,2019</p>
-                                    </div>
-                                    <p className="company-name">St. Joseph's High School</p>
-                                </div>
+                                {education.map((el) => {
+                                    return (
+                                        <div className="divf fdirc workCard edBox">
+                                            <div className="divf workMainH">
+                                                <p className="position-name">{el.degree}</p>
+                                                <p className="timesWork">{el.timeline}</p>
+                                            </div>
+                                            <p className="company-name">{el.institute}</p>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </div>
                     </Draggable>
 
                 </div>
+                {/* Certifications App */}
                 <div id={softList[3][1]} className="divf fdirc softCard"
                     onClick={() => {
                         var cc = currCount;
@@ -289,42 +279,22 @@ export default function MainContent() {
                                 <p className="mH handle">#CERTIFICATIONS</p>
                             </div>
                             <div className="divf fdirc allWorks allEds">
-                                <Link target="_blank" to="https://drive.google.com/file/d/1B0WS9D60b7ZVBOqSS2z7CtZ_3EcOUaoc/view?usp=sharing" className="divf fdirc workCard edBox certBox">
-                                    <div className="divf workMainH">
-                                        <p className="position-name">Introduction Course to the Graph</p>
-                                    </div>
-                                    <p className="company-name">The Graph</p>
-                                </Link>
-
-                                <Link target="_blank" to="https://drive.google.com/file/d/1bhmmy0H8lVcwehls9fMIZYGTXdRanyB-/view?usp=sharing" className="divf fdirc workCard edBox certBox">
-                                    <div className="divf workMainH">
-                                        <p className="position-name">Automating Real-World Tasks with Python</p>
-                                    </div>
-                                    <p className="company-name">Google</p>
-                                </Link>
-                                <Link target="_blank" to="https://drive.google.com/file/d/1Fu9cHfTIUs3EtdR9kH1rPMDVcth1Vap2/view?usp=sharing" className="divf fdirc workCard edBox certBox">
-                                    <div className="divf workMainH">
-                                        <p className="position-name">Troubleshooting & Debugging Techniques</p>
-                                    </div>
-                                    <p className="company-name">Google</p>
-                                </Link>
-                                <Link target="_blank" to="https://drive.google.com/file/d/1PZwsgDN8X02krQ33pW0uZys1rVxsDbwP/view?usp=sharing" className="divf fdirc workCard edBox certBox">
-                                    <div className="divf workMainH">
-                                        <p className="position-name">Using Python to Interact with OS</p>
-                                    </div>
-                                    <p className="company-name">Google</p>
-                                </Link>
-                                <Link target="_blank" to="https://drive.google.com/file/d/1KDdi7yUxyNaZbxSRxf0nzG1V0vBFnaMH/view?usp=sharing" className="divf fdirc workCard edBox certBox">
-                                    <div className="divf workMainH">
-                                        <p className="position-name">Algorithmic Toolbox</p>
-                                    </div>
-                                    <p className="company-name">Coursera</p>
-                                </Link>
+                                {certifications.map((el) => {
+                                    return (
+                                        <Link target="_blank" to={el.linkToCert} className="divf fdirc workCard edBox certBox">
+                                            <div className="divf workMainH">
+                                                <p className="position-name">{el.name}</p>
+                                            </div>
+                                            <p className="company-name">{el.provider}</p>
+                                        </Link>
+                                    )
+                                })}
                             </div>
                         </div>
                     </Draggable>
 
                 </div>
+                {/* Volunteering App*/}
                 <div id={softList[4][1]} className="divf fdirc softCard"
                     onClick={() => {
                         var cc = currCount;
@@ -342,36 +312,22 @@ export default function MainContent() {
                                 <p className="mH handle">#VOLUNTEERING</p>
                             </div>
                             <div className="divf fdirc allWorks allEds">
-                                <div className="divf fdirc workCard edBox certBox">
-                                    <div className="divf workMainH">
-                                        <p className="position-name">Graph Advocate</p>
-                                    </div>
-                                    <p className="company-name">The Graph</p>
-                                </div>
-
-                                <div className="divf fdirc workCard edBox certBox">
-                                    <div className="divf workMainH">
-                                        <p className="position-name">Internshala Student Partner</p>
-                                    </div>
-                                    <p className="company-name">Internshala</p>
-                                </div>
-                                <div className="divf fdirc workCard edBox certBox">
-                                    <div className="divf workMainH">
-                                        <p className="position-name">Chief Technical Officer</p>
-                                    </div>
-                                    <p className="company-name">IET - Students' Chapter KJSIT</p>
-                                </div>
-                                <div className="divf fdirc workCard edBox certBox">
-                                    <div className="divf workMainH">
-                                        <p className="position-name">Volunteer</p>
-                                    </div>
-                                    <p className="company-name">National Service Scheme</p>
-                                </div>
+                                {volunteering.map((el) => {
+                                    return (
+                                        <div className="divf fdirc workCard edBox">
+                                            <div className="divf workMainH">
+                                                <p className="position-name">{el.role}</p>
+                                            </div>
+                                            <p className="company-name">{el.org}</p>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </div>
                     </Draggable>
 
                 </div>
+                {/* Skills App */}
                 <div id={softList[5][1]} className="divf fdirc softCard"
                     onClick={() => {
                         var cc = currCount;

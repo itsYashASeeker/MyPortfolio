@@ -1,32 +1,39 @@
 @media (max-width:600px) {
-    .footerPC{
+    .footerPC {
         flex-direction: column;
     }
-    .mypcDiv{
+
+    .mypcDiv {
         display: none;
     }
+
     .taskB1 {
         padding: 0.5rem;
         border-radius: 1rem;
         font-size: 0.9rem;
     }
-    .footTaskIcon{
+
+    .footTaskIcon {
         height: 2rem;
     }
+
     .allSoft {
         height: calc(100vh - 5rem);
         /* height: 100vh; */
     }
-    .workOfBg{
-        margin:0;
+
+    .workOfBg {
+        margin: 0;
         margin-top: 3.5rem;
         height: calc(100% - 4.5rem);
     }
-    .whyMeFBG{
-        margin:0;
+
+    .whyMeFBG {
+        margin: 0;
         margin-top: 3.5rem;
-        height: calc(100% - 4.5rem); 
+        height: calc(100% - 4.5rem);
     }
+
     .fullbg1 {
         height: calc(100vh - 5.5rem);
     }
@@ -44,7 +51,7 @@
 
     .folderCard {
         width: 4.4rem;
-        height: 4.8rem;
+        height: 4.7rem;
     }
 
     .folderI {

@@ -32,7 +32,7 @@ export const projects = [
     {
         name: "Todo-lists webapp",
         description: "A User Interactive Todo lists WebApp",
-        linkToProject: "https://todolists-pora.onrender.com"
+        linkToProject: "https://todolists-cex4.onrender.com"
     }
 ];
 
@@ -44,7 +44,7 @@ export const experience = [
         linkToCompany: "https://www.healiom.com"
     },
     {
-        jobRole: "Full Stack Developer - Inter",
+        jobRole: "Full Stack Developer - Intern",
         company: "Autowhat",
         timeline: "Jan 2024 - Ongoing",
         linkToCompany: "https://www.autowhat.app/"
@@ -63,4 +63,68 @@ export const experience = [
     },
 ];
 
-const 
+export const education = [
+    {
+        degree: "B.Tech Computer Science",
+        institute: "KJ Somaiya Institute of Technology",
+        timeline: "Dec,2021 - Ongoing"
+    },
+    {
+        degree: "12th Science(HSC)",
+        institute: "KJ Somaiya Junior College of Science and Commerce",
+        timeline: "Completed Aug,2021"
+    },
+    {
+        degree: "10th(SSC)",
+        institute: "St. Joseph's High School",
+        timeline: "Completed Mar,2019"
+    }
+]
+
+export const certifications = [
+    {
+        name: "Introduction Course to the Graph",
+        provider: "The Graph",
+        linkToCert: "https://drive.google.com/file/d/1B0WS9D60b7ZVBOqSS2z7CtZ_3EcOUaoc/view?usp=sharing"
+    },
+    {
+        name: "Automating Real-World Tasks with Python",
+        provider: "Google",
+        linkToCert: "https://drive.google.com/file/d/1bhmmy0H8lVcwehls9fMIZYGTXdRanyB-/view?usp=sharing"
+    },
+    {
+        name: "Troubleshooting & Debugging Techniques",
+        provider: "Google",
+        linkToCert: "https://drive.google.com/file/d/1Fu9cHfTIUs3EtdR9kH1rPMDVcth1Vap2/view?usp=sharing"
+    },
+    {
+        name: "Using Python to Interact with OS",
+        provider: "Google",
+        linkToCert: "https://drive.google.com/file/d/1PZwsgDN8X02krQ33pW0uZys1rVxsDbwP/view?usp=sharing"
+    },
+    {
+        name: "Algorithmic Toolbox",
+        provider: "Coursera",
+        linkToCert: "https://drive.google.com/file/d/1KDdi7yUxyNaZbxSRxf0nzG1V0vBFnaMH/view?usp=sharing"
+    }
+
+]
+
+export const volunteering = [
+    {
+        role: "Graph Advocate",
+        org: "The Graph"
+    },
+    {
+        role: "Internshala Student Partner",
+        org: "Internshala"
+    },
+    {
+        role: "Chief Technical Officer",
+        org: "IET - Students' Chapter KJSIT"
+    },
+    {
+        role: "Volunteer",
+        org: "National Service Scheme"
+    }
+]

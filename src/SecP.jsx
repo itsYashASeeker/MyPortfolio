@@ -110,12 +110,12 @@ export default function SecP() {
             <div id="idMainContent" className="divf mainContent">
                 <MainContent />
             </div>
-            <div id="idLetsConnect" className="divf notifY dNone">
+            <div id="idLetsConnect" className="divf notifY closeNotif">
                 <div className="notContent">
-                    <p className="" style={{ width: "100%", marginBottom: "1rem" }} >/in/yash-chauhan-180031203/</p>
+                    <p className="letsConnectLinkText" style={{ width: "100%", marginBottom: "1rem" }} >/in/yash-chauhan-180031203/</p>
                     <Link className="notBt notBtSuccess fullWidth" style={{ width: "100%", marginTop: "1rem" }}
                         onClick={() => {
-                            retId("idLetsConnect").classList.add("dNone");
+                            retId("idLetsConnect").classList.add("closeNotif");
                             // setCurrApp(0);
                         }}
                         to="https://www.linkedin.com/in/yash-chauhan-180031203/"
@@ -144,12 +144,12 @@ export default function SecP() {
                 ><FontAwesomeIcon icon={faArrowLeft} /> Back to Home</button>
                 <WhyMe />
             </div>
-            <div id="idLetsLearn" className="divf notifY dNone">
+            <div id="idLetsLearn" className="divf notifY closeNotif">
                 <div className="notContent">
                     <p className="notiP1" >Coming soon</p>
                     <button className="notBt notBtSuccess"
                         onClick={() => {
-                            retId("idLetsLearn").classList.add("dNone");
+                            retId("idLetsLearn").classList.add("closeNotif");
                             // setCurrApp(0);
                         }}
                     >OK</button>
@@ -183,7 +183,7 @@ export default function SecP() {
                             id="idTaskBt1"
                             onClick={async () => {
                                 // setCurrApp(4);
-                                retId("idLetsConnect").classList.remove("dNone");
+                                retId("idLetsConnect").classList.remove("closeNotif");
                                 return;
                                 // await setDefaultAppPos()
                             }}
@@ -228,7 +228,7 @@ export default function SecP() {
                             className="divf ttb1 taskB1"
                             onClick={async () => {
                                 // setCurrApp(4);
-                                retId("idLetsLearn").classList.remove("dNone");
+                                retId("idLetsLearn").classList.remove("closeNotif");
                                 return;
                                 // await setDefaultAppPos()
                             }}

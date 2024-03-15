@@ -1,4 +1,4 @@
-.allBigApps{
+.allBigApps {
     position: fixed;
     top: 0;
     width: 100vw;
@@ -6,19 +6,20 @@
     transition: 0.3s all ease-out;
 }
 
-.backLeftPlace{
+.backLeftPlace {
     /* left: 1rem; */
 }
 
-.backToHome{
+.backToHome {
     position: fixed;
     top: 1rem;
     /* right: 1rem; */
     width: calc(100% - 2rem);
+    width: fit-content;
     background: rgba(255, 255, 255, 0.2);
     color: white;
     border: none;
-    padding: 0.2rem 0.4rem;
+    padding: 0.2rem 1rem;
     border-radius: 0.4rem;
     font-size: 1rem;
     backdrop-filter: blur(0.6rem);
@@ -26,24 +27,24 @@
     transition: 0.2s all ease-out;
 }
 
-.backToHome:hover{
+.backToHome:hover {
     background: rgba(255, 255, 255, 0.3);
 }
 
-.goLeft{
+.goLeft {
     /* right: 100%; */
     transform: translateX(-100%);
 }
 
-.goRight{
+.goRight {
     /* left: 100%; */
     transform: translateX(100%);
 }
 
-.goUp{
+.goUp {
     bottom: 100%;
 }
 
-.goDown{
+.goDown {
     top: 100%;
 }

@@ -1,14 +1,17 @@
-.notifY{
+.notifY {
     position: fixed;
     z-index: 999999;
+    transform: scale(1);
     top: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(0.05rem);
     height: 100%;
     width: 100%;
+    /* transition: 0.5s all ease-out; */
 }
 
-.notContent{
+.notContent {
     width: fit-content;
     height: fit-content;
     background: white;
@@ -16,23 +19,25 @@
     padding: 1rem;
     border-radius: 1rem;
     font-size: 1rem;
+    transition: 0.2s all ease-out;
+    transform: scale(1);
 }
 
-.notiP1{
+.notiP1 {
     font-size: 1.5rem;
     font-weight: bold;
     color: green;
 }
 
-.notiP1E{
+.notiP1E {
     color: red;
 }
 
-.notiP2{
+.notiP2 {
     font-size: 1.1rem;
 }
 
-.notBt{
+.notBt {
     /* margin-left: 100%; */
     /* float: right; */
     margin: 0.5rem 0;
@@ -46,11 +51,19 @@
     color: white;
 }
 
-.notBt:hover{
+.notBt:hover {
     opacity: 0.8;
 }
 
-.notBtSuccess{
+.notBtSuccess {
     background: green;
     color: white;
+}
+
+.closeNotif {
+    transform: scale(0);
+}
+
+.closeNotif .notContent {
+    transform: scale(0);
 }
