@@ -370,41 +370,41 @@ export default function MainContent() {
 
                 {/* </div> */}
             </div>
-            <div className="divf leftCFolders">
+            <div className="divf fdirc leftCFolders">
                 <div className="divf fullWC">
-                    <button id={softList[6][0]} className="divf fdirc folderCard myFolder" onClick={() => { const vas = handleSoft(softList[6][0], softList[6][1], abtOpen); setAbtOpen(vas); }}>
+                    <button id={softList[6][0]} className="divf folderCard myFolder" onClick={() => { const vas = handleSoft(softList[6][0], softList[6][1], abtOpen); setAbtOpen(vas); }}>
                         <img src={MyImage} className="folderI" />
                         <p>About me</p>
                     </button>
                 </div>
 
-                <button id="idProjectFolder" className="divf fdirc folderCard" onClick={() => { const vas = handleSoft("idProjectFolder", "idProjectSC", pOpen); setPOpen(vas); }}>
+                <button id="idProjectFolder" className="divf folderCard" onClick={() => { const vas = handleSoft("idProjectFolder", "idProjectSC", pOpen); setPOpen(vas); }}>
                     <img src={FolderIcon} className="folderI" />
                     <p className="folderName">Projects</p>
                 </button>
-                <button id="idExperienceFolder" className="divf fdirc folderCard" onClick={() => { const vas = handleSoft("idExperienceFolder", "idExperienceSC", expOpen); setExOpen(vas); }}>
+                <button id="idExperienceFolder" className="divf  folderCard" onClick={() => { const vas = handleSoft("idExperienceFolder", "idExperienceSC", expOpen); setExOpen(vas); }}>
                     <img src={FolderIcon} className="folderI" />
                     <p className="folderName">Experience</p>
                 </button>
-                <button id="idEducationFolder" className="divf fdirc folderCard" onClick={() => { const vas = handleSoft("idEducationFolder", "idEducationSC", edOpen); setEdOpen(vas); }}>
+                <button id="idEducationFolder" className="divf  folderCard" onClick={() => { const vas = handleSoft("idEducationFolder", "idEducationSC", edOpen); setEdOpen(vas); }}>
                     <img src={FolderIcon} className="folderI" />
                     <p className="folderName">Education</p>
                 </button>
-                <button id={softList[3][0]} className="divf fdirc folderCard" onClick={() => { const vas = handleSoft(softList[3][0], softList[3][1], cerOpen); setCerOpen(vas); }}>
+                <button id={softList[3][0]} className="divf  folderCard" onClick={() => { const vas = handleSoft(softList[3][0], softList[3][1], cerOpen); setCerOpen(vas); }}>
                     <img src={FolderIcon} className="folderI" />
                     <p className="folderName">Certifications</p>
                 </button>
             </div>
             <div className="divf fdirc leftCFolders rightCFolders">
-                <button id={softList[4][0]} className="divf fdirc folderCard" onClick={() => { const vas = handleSoft(softList[4][0], softList[4][1], volOpen); setVolOpen(vas); }}>
+                <button id={softList[4][0]} className="divf  folderCard" onClick={() => { const vas = handleSoft(softList[4][0], softList[4][1], volOpen); setVolOpen(vas); }}>
                     <img src={FolderIcon} className="folderI" />
                     <p className="folderName">Volunteering</p>
                 </button>
-                <button id={softList[5][0]} className="divf fdirc folderCard" onClick={() => { const vas = handleSoft(softList[5][0], softList[5][1], skOpen); setSkOpen(vas); }}>
+                <button id={softList[5][0]} className="divf  folderCard" onClick={() => { const vas = handleSoft(softList[5][0], softList[5][1], skOpen); setSkOpen(vas); }}>
                     <img src={FolderIcon} className="folderI" />
                     <p className="folderName">Skills</p>
                 </button>
-                <Link target="_blank" to="https://drive.google.com/file/d/19uWSyr2r4wcbVQa1pVHONiXr_Lj2YIUn/view?usp=sharing" className="divf fdirc folderCard">
+                <Link target="_blank" to="https://drive.google.com/file/d/19uWSyr2r4wcbVQa1pVHONiXr_Lj2YIUn/view?usp=sharing" className="divf folderCard">
                     <img src={ResumeIcon} className="folderI" />
                     <p className="folderName">Resume</p>
                 </Link>

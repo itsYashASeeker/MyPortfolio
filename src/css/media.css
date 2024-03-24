@@ -9,12 +9,12 @@
 
     .taskB1 {
         padding: 0.5rem;
-        border-radius: 1rem;
+        border-radius: 0.8rem;
         font-size: 0.9rem;
     }
 
     .footTaskIcon {
-        height: 2rem;
+        height: 1.4rem;
     }
 
     .allSoft {
@@ -38,6 +38,26 @@
         height: calc(100vh - 5.5rem);
     }
 
+    .folderCard {
+        padding: 0.3rem 0.4rem;
+    }
+
+    .folderI {
+        width: 0.9rem;
+    }
+
+    .folderName {
+        font-size: 1rem;
+    }
+
+    .myFolder {
+        font-size: 1rem;
+    }
+
+    .myFolder .folderI {
+        width: 1.2rem;
+    }
+
 }
 
 @media (max-width:500px) {
@@ -49,25 +69,13 @@
         align-items: start;
     }
 
-    .folderCard {
-        width: 4.4rem;
-        height: 4.7rem;
+    /* .folderCard {
+        padding: 0.3rem 0.4rem;
     }
 
     .folderI {
-        width: 2.5rem;
-        margin: 0 0.6rem;
+        width: 0.9rem;
     }
-
-    .leftCFolders {
-        width: 10rem;
-        padding: 1rem 0.7rem;
-    }
-
-    .rightCFolders {
-        width: fit-content;
-    }
-
     .folderName {
         font-size: 0.7rem;
     }
@@ -80,7 +88,7 @@
 
     .myFolder .folderI {
         width: 5rem;
-    }
+    } */
 
 
 }
@@ -88,5 +96,25 @@
 @media (max-width: 350px) {
     .mypc {
         font-size: 1.1rem;
+    }
+
+    .folderCard {
+        padding: 0.2rem 0.3rem;
+    }
+
+    .folderI {
+        width: 0.8rem;
+    }
+
+    .folderName {
+        font-size: 0.9rem;
+    }
+
+    .myFolder {
+        font-size: 1rem;
+    }
+
+    .myFolder .folderI {
+        width: 1rem;
     }
 }
