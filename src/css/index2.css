@@ -215,8 +215,8 @@ a {
     width: 100%;
     justify-content: start;
     /* min-height: 2rem; */
-    /* height: 6rem; */
-    min-height: 5.5rem;
+    height: 6rem;
+    /* min-height: 5.5rem; */
     color: rgb(224, 224, 224);
     /* width: 5.5rem; */
 }
@@ -357,7 +357,7 @@ a {
     /* justify-content: start; */
     /* height: 9.5rem; */
     width: 100%;
-    min: 8rem;
+    height: 8rem;
 }
 
 .folderName {
