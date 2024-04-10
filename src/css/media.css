@@ -35,10 +35,10 @@
     }
 
     .fullbg1 {
-        height: calc(100vh - 5.5rem);
+        /* height: calc(100vh - 5.5rem); */
     }
 
-    .folderCard {
+    /* .folderCard {
         padding: 0.3rem 0.4rem;
         height: 2.5rem;
     }
@@ -58,7 +58,7 @@
 
     .myFolder .folderI {
         width: 1.2rem;
-    }
+    } */
 
 }
 
@@ -101,22 +101,24 @@
     }
 
     .folderCard {
-        padding: 0.2rem 0.3rem;
+        padding: 0.4rem 0.4rem;
+        min-height: 4.5rem;
     }
 
     .folderI {
-        width: 0.8rem;
+        width: 2rem;
     }
 
     .folderName {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .myFolder {
         font-size: 1rem;
+        min-height: 4.5rem;
     }
 
     .myFolder .folderI {
-        width: 1rem;
+        width: 2.5rem;
     }
 }

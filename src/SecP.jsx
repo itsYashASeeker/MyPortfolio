@@ -174,76 +174,79 @@ export default function SecP() {
                     <p className="mypc">My Personal Computer</p>
                     <p className="myname">Yash Kamlesh Chauhan</p>
                 </div>
-                <div className="divf taskButs">
-                    {/* <button className="taskB1">Connect with me!<span></span></button>
+                <div className="divf " style={{ flexGrow: 1 }}>
+                    <div className="divf taskButs">
+                        {/* <button className="taskB1">Connect with me!<span></span></button>
                     <button className="taskB1">I have some work for you!<span></span></button> */}
-                    {/* <BootstrapTooltip title="Connect with me!"> */}
-                    <div id="taskOutB1" className="tasksApp">
-                        <button className="divf ttb1 taskB1"
-                            id="idTaskBt1"
-                            onClick={async () => {
-                                // setCurrApp(4);
-                                retId("idLetsConnect").classList.remove("closeNotif");
-                                return;
-                                // await setDefaultAppPos()
-                            }}
-                        ><img className="footTaskIcon" src={ConnectImg} /><span></span></button>
-                        <div className="ttoolTip">Connect with me!</div>
+                        {/* <BootstrapTooltip title="Connect with me!"> */}
+                        <div id="taskOutB1" className="tasksApp">
+                            <button className="divf ttb1 taskB1"
+                                id="idTaskBt1"
+                                onClick={async () => {
+                                    // setCurrApp(4);
+                                    retId("idLetsConnect").classList.remove("closeNotif");
+                                    return;
+                                    // await setDefaultAppPos()
+                                }}
+                            ><img className="footTaskIcon" src={ConnectImg} /><span></span></button>
+                            <div className="ttoolTip">Connect with me!</div>
+                        </div>
+                        <div id="taskOutB2" className="tasksApp">
+                            <button className="divf ttb1 taskB1"
+                                id="idTaskBt2"
+                                onClick={async () => {
+                                    await setDefaultAppPos()
+                                    setCurrApp(2);
+                                    // delayTime(1000);
+                                    retId("idMainContent").classList.add("goRight");
+
+                                    retId("idWorkOffer").classList.remove("goLeft");
+
+                                    // retId("idTaskBtWorkOffer")
+                                }}
+                            ><img className="footTaskIcon" src={EmailImg} /><span></span></button>
+                            <div className="ttoolTip">Open to Work</div>
+                        </div>
+                        <div id="taskOutB3" className="tasksApp">
+                            <button className="divf ttb1 taskB1"
+                                id="idTaskBt3"
+                                onClick={async () => {
+                                    await setDefaultAppPos()
+                                    // delayTime(1000);
+                                    setCurrApp(3);
+                                    retId("idMainContent").classList.add("goLeft");
+
+                                    retId("idWhyMe").classList.remove("goRight");
+
+                                    // retId("idTaskBtWorkOffer")
+                                }}
+                            ><img className="footTaskIcon" src={DiamondImg} /><span></span></button>
+                            <div className="ttoolTip">Why me?</div>
+                        </div>
+                        <div id="taskOutB4" className="tasksApp">
+                            <button
+                                id="idTaskBt4"
+                                className="divf ttb1 taskB1"
+                                onClick={async () => {
+                                    // setCurrApp(4);
+                                    retId("idLetsLearn").classList.remove("closeNotif");
+                                    return;
+                                    // await setDefaultAppPos()
+                                }}
+                            ><img className="footTaskIcon" src={LearnImg} /><span></span></button>
+                            <div className="ttoolTip">Let's learn together!</div>
+                        </div>
+                        {/* </BootstrapTooltip> */}
+
+
+
+
+
+                        {/* <button className="taskB1">Let's learn together<span></span></button> */}
+
                     </div>
-                    <div id="taskOutB2" className="tasksApp">
-                        <button className="divf ttb1 taskB1"
-                            id="idTaskBt2"
-                            onClick={async () => {
-                                await setDefaultAppPos()
-                                setCurrApp(2);
-                                // delayTime(1000);
-                                retId("idMainContent").classList.add("goRight");
-
-                                retId("idWorkOffer").classList.remove("goLeft");
-
-                                // retId("idTaskBtWorkOffer")
-                            }}
-                        ><img className="footTaskIcon" src={EmailImg} /><span></span></button>
-                        <div className="ttoolTip">Open to Work</div>
-                    </div>
-                    <div id="taskOutB3" className="tasksApp">
-                        <button className="divf ttb1 taskB1"
-                            id="idTaskBt3"
-                            onClick={async () => {
-                                await setDefaultAppPos()
-                                // delayTime(1000);
-                                setCurrApp(3);
-                                retId("idMainContent").classList.add("goLeft");
-
-                                retId("idWhyMe").classList.remove("goRight");
-
-                                // retId("idTaskBtWorkOffer")
-                            }}
-                        ><img className="footTaskIcon" src={DiamondImg} /><span></span></button>
-                        <div className="ttoolTip">Why me?</div>
-                    </div>
-                    <div id="taskOutB4" className="tasksApp">
-                        <button
-                            id="idTaskBt4"
-                            className="divf ttb1 taskB1"
-                            onClick={async () => {
-                                // setCurrApp(4);
-                                retId("idLetsLearn").classList.remove("closeNotif");
-                                return;
-                                // await setDefaultAppPos()
-                            }}
-                        ><img className="footTaskIcon" src={LearnImg} /><span></span></button>
-                        <div className="ttoolTip">Let's learn together!</div>
-                    </div>
-                    {/* </BootstrapTooltip> */}
-
-
-
-
-
-                    {/* <button className="taskB1">Let's learn together<span></span></button> */}
-
                 </div>
+
                 <div id="idCurrentTime" className="currTime">14:48:11</div>
             </div>
         </div>
