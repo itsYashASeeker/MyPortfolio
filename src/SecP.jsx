@@ -174,7 +174,7 @@ export default function SecP() {
                     <p className="mypc">My Personal Computer</p>
                     <p className="myname">Yash Kamlesh Chauhan</p>
                 </div>
-                <div className="divf " style={{ flexGrow: 1 }}>
+                <div className="divf " style={{ flexGrow: 1, background: "transparent" }}>
                     <div className="divf taskButs">
                         {/* <button className="taskB1">Connect with me!<span></span></button>
                     <button className="taskB1">I have some work for you!<span></span></button> */}
