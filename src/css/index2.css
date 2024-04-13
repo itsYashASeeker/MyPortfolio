@@ -427,11 +427,13 @@ a {
     overflow: auto;
     justify-content: start;
     align-items: start;
-
+    opacity: 0.9;
+    backdrop-filter: blur(1rem);
     /* animation: showglow 0.3s; */
 }
 
 .selectedAppBorder {
+    opacity: 1;
     box-shadow: 0 0 0.1rem 0.25rem rgba(142, 202, 255, 0.7);
 }
 
