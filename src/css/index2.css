@@ -399,8 +399,9 @@ a {
     margin-top: 0;
     width: fit-content;
     height: fit-content;
+
     transition: 0.3s top, 0.3s left, 0.3s transform;
-    transition: 0.3s all ease-out;
+    /* transition: 0.3s all ease-out; */
     transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 1);
     /* resize: both; */
 }
@@ -426,6 +427,31 @@ a {
     overflow: auto;
     justify-content: start;
     align-items: start;
+
+    /* animation: showglow 0.3s; */
+}
+
+.selectedAppBorder {
+    box-shadow: 0 0 0.1rem 0.25rem rgba(142, 202, 255, 0.7);
+}
+
+.openCard .c1 {
+    animation: showglow 0.3s ease-out;
+
+}
+
+@keyframes showglow {
+    0% {
+        box-shadow: 0 0 0rem calc(100vw) rgba(255, 255, 255, 0.05);
+    }
+
+    90% {
+        box-shadow: 0 0 0.5rem calc(100vw) rgba(255, 255, 255, 0.05);
+    }
+
+    100% {
+        box-shadow: 0 0 0rem calc(100vw) rgba(255, 255, 255, 0.05);
+    }
 }
 
 .closeSoft {

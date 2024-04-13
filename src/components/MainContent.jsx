@@ -40,6 +40,8 @@ export default function MainContent() {
     const [mousePos, setMousePos] = useState({});
     const [currentTime, setCTime] = useState();
 
+    const [currAppId, setCurrAppId] = useState();
+
     var softList = [
         ["idProjectFolder", "idProjectSC"],
         ["idExperienceFolder", "idExperienceSC"],
@@ -96,6 +98,16 @@ export default function MainContent() {
         // console.log(`Top: ${projectF.x} & Y: ${projectF.y}`);
     }, []);
 
+    function highApp(currId) {
+        const currAppIDDum = currAppId;
+        if (currAppIDDum && retId(currAppIDDum + "proj")) {
+            retId(currAppIDDum + "proj").classList.remove("selectedAppBorder");
+
+        }
+        retId(currId + "proj").classList.add("selectedAppBorder");
+        setCurrAppId(currId);
+    }
+
     function handleSoft(pid, idnme, val) {
         // console.log(pid);
         var cc = currCount;
@@ -107,6 +119,7 @@ export default function MainContent() {
             retId(idnme).classList.remove("openCard");
             retId(idnme).style.zIndex = `100`;
             retId(pid).classList.remove("selectedFCard");
+            // highApp(idnme);
             return false;
         }
         else {
@@ -114,6 +127,7 @@ export default function MainContent() {
             // retId(idnme).classList.add("c1");
             retId(idnme).classList.add("openCard");
             retId(idnme).style.zIndex = `${100 + cc}`;
+            highApp(idnme);
             retId(pid).classList.add("selectedFCard");
 
             return true;
@@ -131,27 +145,30 @@ export default function MainContent() {
                         cc = cc + 1;
                         setCuC(cc);
                         retId(softList[6][1]).style.zIndex = `${cc + 100}`;
+                        highApp(softList[6][1])
                     }
                     }>
                     <Draggable
                         handle=".handle"
                     >
-                        <div className="divf fdirc c1 softWindow aboutMeWindow">
-                            <button className="closeSoft" onClick={() => { const vas = handleSoft(softList[6][0], softList[6][1], abtOpen); setAbtOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
-                            <div className="divf headerBCard">
-                                <p className="mH handle">#ABOUT ME</p>
-                            </div>
-                            <div className="divf fdirc aboutMeD ">
-                                <p>Hey, I am Yash!</p>
-                                <p>A Developer from Mumbai.</p>
-                                <p>I have a keen interest in Blockchain & Web Development.</p>
-                                <p>You can call me a web3 developer {":)"} </p>
-                                <p>I like reading books, cooking, playing chess...</p>
-                                <div className="divf socialLinks">
-                                    {/* <Link to="/"><FontAwesomeIcon icon={faGithub} /></Link> */}
-                                    <Link target="_blank" to="https://github.com/itsYashASeeker"><FontAwesomeIcon icon={faGithub} /></Link>
-                                    <Link target="_blank" to="https://www.linkedin.com/in/yash-chauhan-180031203/"><FontAwesomeIcon icon={faLinkedin} /></Link>
-                                    <Link target="_blank" to="https://www.instagram.com/yashck.iso/"><FontAwesomeIcon icon={faInstagram} /></Link>
+                        <div>
+                            <div id={softList[6][1] + "proj"} className="divf fdirc c1 softWindow aboutMeWindow">
+                                <button className="closeSoft" onClick={() => { const vas = handleSoft(softList[6][0], softList[6][1], abtOpen); setAbtOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#ABOUT ME</p>
+                                </div>
+                                <div className="divf fdirc aboutMeD ">
+                                    <p>Hey, I am Yash!</p>
+                                    <p>A Developer from Mumbai.</p>
+                                    <p>I have a keen interest in Blockchain & Web Development.</p>
+                                    <p>You can call me a web3 developer {":)"} </p>
+                                    <p>I like reading books, cooking, playing chess...</p>
+                                    <div className="divf socialLinks">
+                                        {/* <Link to="/"><FontAwesomeIcon icon={faGithub} /></Link> */}
+                                        <Link target="_blank" to="https://github.com/itsYashASeeker"><FontAwesomeIcon icon={faGithub} /></Link>
+                                        <Link target="_blank" to="https://www.linkedin.com/in/yash-chauhan-180031203/"><FontAwesomeIcon icon={faLinkedin} /></Link>
+                                        <Link target="_blank" to="https://www.instagram.com/yashck.iso/"><FontAwesomeIcon icon={faInstagram} /></Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -159,103 +176,114 @@ export default function MainContent() {
 
                 </div>
                 {/* Projects App */}
-                <div id="idProjectSC" className="divf fdirc softCard"
+                <div id={softList[0][1]} className="divf fdirc softCard"
                     onClick={() => {
                         var cc = currCount;
                         cc = cc + 1;
                         setCuC(cc);
-                        retId("idProjectSC").style.zIndex = `${cc + 100}`;
+                        retId(softList[0][1]).style.zIndex = `${cc + 100}`;
+                        highApp(softList[0][1]);
                     }
                     }
                 >
                     <Draggable
                         handle=".handle"
                     >
-                        <div className="divf fdirc cProjects c1 softWindow softProject">
-                            <button className="closeSoft" onClick={() => { const vas = handleSoft("idProjectFolder", "idProjectSC", pOpen); setPOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
+                        <div>
+                            <div
+                                id={softList[0][1] + "proj"}
+                                className="divf fdirc cProjects c1 softWindow softProject">
+                                <button className="closeSoft" onClick={() => { const vas = handleSoft("idProjectFolder", "idProjectSC", pOpen); setPOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
 
-                            <div className="divf headerBCard">
-                                <p className="mH handle">#PROJECTS</p>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#PROJECTS</p>
+                                </div>
+
+                                <div className="divf allProjects">
+                                    {projects.map((el) => {
+                                        return (
+                                            <Link target="_blank" to={el.linkToProject} className="divf fdirc indProject projCard allWCards">
+                                                <button className="goToSite"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
+                                                <p className="projectName">{el.name}</p>
+                                                <p className="projectDesc">{el.description}</p>
+                                            </Link>
+                                        )
+                                    })}
+                                </div>
+
                             </div>
-
-                            <div className="divf allProjects">
-                                {projects.map((el) => {
-                                    return (
-                                        <Link target="_blank" to={el.linkToProject} className="divf fdirc indProject projCard allWCards">
-                                            <button className="goToSite"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
-                                            <p className="projectName">{el.name}</p>
-                                            <p className="projectDesc">{el.description}</p>
-                                        </Link>
-                                    )
-                                })}
-                            </div>
-
                         </div>
                     </Draggable>
                 </div>
                 {/* Experience App */}
-                <div id="idExperienceSC" className="divf fdirc softCard"
+                <div id={softList[1][1]} className="divf fdirc softCard"
                     onClick={() => {
                         var cc = currCount;
                         cc = cc + 1;
                         setCuC(cc);
-                        retId("idExperienceSC").style.zIndex = `${cc + 100}`;
+                        retId(softList[1][1]).style.zIndex = `${cc + 100}`;
+                        highApp(softList[1][1]);
                     }
                     }
                 >
                     <Draggable
                         handle=".handle"
                     >
-                        <div className="divf fdirc c1 softWindow">
-                            <button className="closeSoft" onClick={() => { const vas = handleSoft("idExperienceFolder", "idExperienceSC", expOpen); setExOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
-                            <div className="divf headerBCard">
-                                <p className="mH handle">#WORK EXPERIENCE</p>
-                            </div>
-                            <div className="divf fdirc allWorks">
-                                {experience.map((el) => {
-                                    return (
-                                        <Link to={el.linkToCompany} target="_blank" className="divf fdirc workCard" style={{ color: "black" }}>
-                                            <div className="divf workMainH">
-                                                <p className="position-name">{el.jobRole}</p>
-                                                <p className="timesWork">{el.timeline}</p>
-                                            </div>
-                                            <p className="company-name">{el.company}</p>
-                                        </Link>
-                                    )
-                                })}
+                        <div>
+                            <div id={softList[1][1] + "proj"} className="divf fdirc c1 softWindow">
+                                <button className="closeSoft" onClick={() => { const vas = handleSoft("idExperienceFolder", "idExperienceSC", expOpen); setExOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#WORK EXPERIENCE</p>
+                                </div>
+                                <div className="divf fdirc allWorks">
+                                    {experience.map((el) => {
+                                        return (
+                                            <Link to={el.linkToCompany} target="_blank" className="divf fdirc workCard" style={{ color: "black" }}>
+                                                <div className="divf workMainH">
+                                                    <p className="position-name">{el.jobRole}</p>
+                                                    <p className="timesWork">{el.timeline}</p>
+                                                </div>
+                                                <p className="company-name">{el.company}</p>
+                                            </Link>
+                                        )
+                                    })}
+                                </div>
                             </div>
                         </div>
                     </Draggable>
                 </div>
                 {/* Education App */}
-                <div id="idEducationSC" className="divf fdirc softCard"
+                <div id={softList[2][1]} className="divf fdirc softCard"
                     onClick={() => {
                         var cc = currCount;
                         cc = cc + 1;
                         setCuC(cc);
-                        retId("idEducationSC").style.zIndex = `${cc + 100}`;
+                        retId(softList[2][1]).style.zIndex = `${cc + 100}`;
+                        highApp(softList[2][1])
                     }
                     }>
                     <Draggable
                         handle=".handle"
                     >
-                        <div className="divf fdirc c1 softWindow">
-                            <button className="closeSoft" onClick={() => { const vas = handleSoft("idEducationFolder", "idEducationSC", edOpen); setEdOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
-                            <div className="divf headerBCard">
-                                <p className="mH handle">#EDUCATION</p>
-                            </div>
-                            <div className="divf fdirc allWorks allEds">
-                                {education.map((el) => {
-                                    return (
-                                        <div className="divf fdirc workCard edBox">
-                                            <div className="divf workMainH">
-                                                <p className="position-name">{el.degree}</p>
-                                                <p className="timesWork">{el.timeline}</p>
+                        <div>
+                            <div id={softList[2][1] + "proj"} className="divf fdirc c1 softWindow">
+                                <button className="closeSoft" onClick={() => { const vas = handleSoft("idEducationFolder", "idEducationSC", edOpen); setEdOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#EDUCATION</p>
+                                </div>
+                                <div className="divf fdirc allWorks allEds">
+                                    {education.map((el) => {
+                                        return (
+                                            <div className="divf fdirc workCard edBox">
+                                                <div className="divf workMainH">
+                                                    <p className="position-name">{el.degree}</p>
+                                                    <p className="timesWork">{el.timeline}</p>
+                                                </div>
+                                                <p className="company-name">{el.institute}</p>
                                             </div>
-                                            <p className="company-name">{el.institute}</p>
-                                        </div>
-                                    )
-                                })}
+                                        )
+                                    })}
+                                </div>
                             </div>
                         </div>
                     </Draggable>
@@ -268,27 +296,32 @@ export default function MainContent() {
                         cc = cc + 1;
                         setCuC(cc);
                         retId(softList[3][1]).style.zIndex = `${cc + 100}`;
+                        highApp(softList[3][1]);
                     }
                     }>
                     <Draggable
                         handle=".handle"
                     >
-                        <div className="divf fdirc c1 softWindow">
-                            <button className="closeSoft" onClick={() => { const vas = handleSoft(softList[3][0], softList[3][1], cerOpen); setCerOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
-                            <div className="divf headerBCard">
-                                <p className="mH handle">#CERTIFICATIONS</p>
-                            </div>
-                            <div className="divf fdirc allWorks allEds">
-                                {certifications.map((el) => {
-                                    return (
-                                        <Link target="_blank" to={el.linkToCert} className="divf fdirc workCard edBox certBox">
-                                            <div className="divf workMainH">
-                                                <p className="position-name">{el.name}</p>
-                                            </div>
-                                            <p className="company-name">{el.provider}</p>
-                                        </Link>
-                                    )
-                                })}
+                        <div>
+                            <div
+                                id={softList[3][1] + "proj"}
+                                className="divf fdirc c1 softWindow">
+                                <button className="closeSoft" onClick={() => { const vas = handleSoft(softList[3][0], softList[3][1], cerOpen); setCerOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#CERTIFICATIONS</p>
+                                </div>
+                                <div className="divf fdirc allWorks allEds">
+                                    {certifications.map((el) => {
+                                        return (
+                                            <Link target="_blank" to={el.linkToCert} className="divf fdirc workCard edBox certBox">
+                                                <div className="divf workMainH">
+                                                    <p className="position-name">{el.name}</p>
+                                                </div>
+                                                <p className="company-name">{el.provider}</p>
+                                            </Link>
+                                        )
+                                    })}
+                                </div>
                             </div>
                         </div>
                     </Draggable>
@@ -301,27 +334,32 @@ export default function MainContent() {
                         cc = cc + 1;
                         setCuC(cc);
                         retId(softList[4][1]).style.zIndex = `${cc + 100}`;
+                        highApp(softList[4][1]);
                     }
                     }>
                     <Draggable
                         handle=".handle"
                     >
-                        <div className="divf fdirc c1 softWindow">
-                            <button className="closeSoft" onClick={() => { const vas = handleSoft(softList[4][0], softList[4][1], volOpen); setVolOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
-                            <div className="divf headerBCard">
-                                <p className="mH handle">#VOLUNTEERING</p>
-                            </div>
-                            <div className="divf fdirc allWorks allEds">
-                                {volunteering.map((el) => {
-                                    return (
-                                        <div className="divf fdirc workCard edBox">
-                                            <div className="divf workMainH">
-                                                <p className="position-name">{el.role}</p>
+                        <div>
+                            <div
+                                id={softList[4][1] + "proj"}
+                                className="divf fdirc c1 softWindow">
+                                <button className="closeSoft" onClick={() => { const vas = handleSoft(softList[4][0], softList[4][1], volOpen); setVolOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#VOLUNTEERING</p>
+                                </div>
+                                <div className="divf fdirc allWorks allEds">
+                                    {volunteering.map((el) => {
+                                        return (
+                                            <div className="divf fdirc workCard edBox">
+                                                <div className="divf workMainH">
+                                                    <p className="position-name">{el.role}</p>
+                                                </div>
+                                                <p className="company-name">{el.org}</p>
                                             </div>
-                                            <p className="company-name">{el.org}</p>
-                                        </div>
-                                    )
-                                })}
+                                        )
+                                    })}
+                                </div>
                             </div>
                         </div>
                     </Draggable>
@@ -334,33 +372,38 @@ export default function MainContent() {
                         cc = cc + 1;
                         setCuC(cc);
                         retId(softList[5][1]).style.zIndex = `${cc + 100}`;
+                        highApp(softList[5][1]);
                     }
                     }>
                     <Draggable
                         handle=".handle"
                     >
-                        <div className="divf fdirc c1 softWindow cSk1">
-                            <button className="closeSoft" onClick={() => { const vas = handleSoft(softList[5][0], softList[5][1], skOpen); setSkOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
-                            <div className="divf headerBCard">
-                                <p className="mH handle">#SKILLS</p>
-                            </div>
-                            <div className="divf skillBoxs">
-                                <div className="divf skB"><FontAwesomeIcon icon={faReact} className="fIconS" />React</div>
-                                <div className="divf skB"><FontAwesomeIcon icon={faNodeJs} className="fIconS" />Nodejs</div>
-                                <div className="divf skB"><FontAwesomeIcon icon={faPython} className="fIconS" />Python</div>
-                                <div className="divf skB"><img src={SolLogo} className="fImgS fIconS" />Solidity</div>
-                                <div className="divf skB"><FontAwesomeIcon icon={faJs} className="fIconS" />Javascript</div>
-                                <div className="divf skB"><img src={NextLogo} className="fImgS fIconS" />Nextjs</div>
-                                <div className="divf skB"><FontAwesomeIcon icon={faCode} className="fIconS" />DSA</div>
-                                <div className="divf skB"><FontAwesomeIcon icon={faFigma} className="fIconS" />Figma</div>
-                                <div className="divf skB"><img src={CanvaLogo} className="fImgS fIconS" />Canva</div>
-                                <div className="divf skB"><img src={DjangoRestLogo} className="fImgS fIconS" />Django Rest Framework</div>
-                                <div className="divf skB"><img src={MongoLogo} className="fImgS fIconS" />Mongodb</div>
-                                <div className="divf skB"><img src={SqlLogo} className="fImgS fIconS" />SQL</div>
+                        <div>
+                            <div
+                                id={softList[5][1] + "proj"}
+                                className="divf fdirc c1 softWindow cSk1">
+                                <button className="closeSoft" onClick={() => { const vas = handleSoft(softList[5][0], softList[5][1], skOpen); setSkOpen(vas); }}><FontAwesomeIcon icon={faXmark} /></button>
+                                <div className="divf headerBCard">
+                                    <p className="mH handle">#SKILLS</p>
+                                </div>
+                                <div className="divf skillBoxs">
+                                    <div className="divf skB"><FontAwesomeIcon icon={faReact} className="fIconS" />React</div>
+                                    <div className="divf skB"><FontAwesomeIcon icon={faNodeJs} className="fIconS" />Nodejs</div>
+                                    <div className="divf skB"><FontAwesomeIcon icon={faPython} className="fIconS" />Python</div>
+                                    <div className="divf skB"><img src={SolLogo} className="fImgS fIconS" />Solidity</div>
+                                    <div className="divf skB"><FontAwesomeIcon icon={faJs} className="fIconS" />Javascript</div>
+                                    <div className="divf skB"><img src={NextLogo} className="fImgS fIconS" />Nextjs</div>
+                                    <div className="divf skB"><FontAwesomeIcon icon={faCode} className="fIconS" />DSA</div>
+                                    <div className="divf skB"><FontAwesomeIcon icon={faFigma} className="fIconS" />Figma</div>
+                                    <div className="divf skB"><img src={CanvaLogo} className="fImgS fIconS" />Canva</div>
+                                    <div className="divf skB"><img src={DjangoRestLogo} className="fImgS fIconS" />Django Rest Framework</div>
+                                    <div className="divf skB"><img src={MongoLogo} className="fImgS fIconS" />Mongodb</div>
+                                    <div className="divf skB"><img src={SqlLogo} className="fImgS fIconS" />SQL</div>
 
 
-                                <div className="divf skB"><FontAwesomeIcon icon={faJava} className="fIconS" />Java</div>
+                                    <div className="divf skB"><FontAwesomeIcon icon={faJava} className="fIconS" />Java</div>
 
+                                </div>
                             </div>
                         </div>
                     </Draggable>

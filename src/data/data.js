@@ -37,17 +37,18 @@ export const projects = [
 ];
 
 export const experience = [
-    {
-        jobRole: "React Developer - Intern",
-        company: "Healiom",
-        timeline: "Mar 2024 - Ongoing",
-        linkToCompany: "https://www.healiom.com"
-    },
+
     {
         jobRole: "Full Stack Developer - Intern",
         company: "Autowhat",
         timeline: "Jan 2024 - Ongoing",
         linkToCompany: "https://www.autowhat.app/"
+    },
+    {
+        jobRole: "React Developer - Intern",
+        company: "Healiom",
+        timeline: "Mar 2024 - Apr 2024",
+        linkToCompany: "https://www.healiom.com"
     },
     {
         jobRole: "Coding Tutor - Intern",
