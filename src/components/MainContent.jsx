@@ -110,7 +110,12 @@ export default function MainContent() {
                 // console.log(projectF.x);
                 // console.log(retId(el[0]).clientWidth);
                 var halfShiftPos = 35;
+                // console.log(`${projectF.x + retId(el[0]).clientWidth / 2}px`);
                 // console.log(retId("idProjectFolder").clientHeight);
+                if (projectF.x > windowSize.width) {
+                    projectF.x = windowSize.width - projectF.x;
+                    // console.log("yooo");
+                }
                 retId(el[1]).style.top = `${projectF.y + retId(el[0]).clientHeight / 2}px`;
                 retId(el[1]).style.left = `${projectF.x + retId(el[0]).clientWidth / 2}px`;
             }
@@ -118,7 +123,7 @@ export default function MainContent() {
         })
 
         // console.log(`Top: ${projectF.x} & Y: ${projectF.y}`);
-    }, [windowSize]);
+    }, [windowSize, window.innerWidth]);
 
     function highApp(currId) {
         const currAppIDDum = currAppId;
