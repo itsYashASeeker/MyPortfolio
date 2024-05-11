@@ -1,4 +1,4 @@
-@media (max-width:600px) {
+@media (max-width:600px) or (max-height: 700px) {
     .footerPC {
         flex-direction: column;
     }
@@ -58,6 +58,21 @@
 
     .myFolder .folderI {
         width: 3rem;
+    }
+
+    .softCard {
+
+        transition: 0.2s top, 0.2s left, 0.2s transform;
+        /* transition: 0.3s all ease-out; */
+        transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 1);
+        /* resize: both; */
+    }
+
+    .openCard {
+        animation: smoothbounceball 0.1s ease;
+
+        animation-delay: 0.2s;
+        /* z-index: 10; */
     }
 
 }
