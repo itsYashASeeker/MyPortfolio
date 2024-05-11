@@ -13,6 +13,7 @@ import DiamondImg from "../src/assets/diamond/Dimond_alt_duotone.svg";
 import EmailImg from "../src/assets/email.svg";
 import LearnImg from "../src/assets/learn_coding.svg";
 import ConnectImg from "../src/assets/connect.svg";
+import SwipeTwoFingers from "../src/assets/two_fingers.png";
 
 // import MyImage from "./assets/Yash Kamlesh Chauhan 2.png";
 
@@ -174,6 +175,10 @@ export default function SecP() {
         <div id="mainBigDivId" className="mainBigDiv" style={{ overflow: "auto", scrollSnapType: "x mandatory" }}
             onScroll={(e) => { changeTaskHighlightOnScroll() }}
         >
+            <div className="divf fdirc showTwoFingerSwipe">
+                <img src={SwipeTwoFingers} alt="Swipe-Two-Fingers" />
+                <p>Swipe with two fingers to switch windows!</p>
+            </div>
             <div className="  fullbg1">
                 <div id="idMainContent" className="divf mainContent">
                     <MainContent />

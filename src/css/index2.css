@@ -165,6 +165,51 @@ a {
     width: 5rem;
 }
 
+.showTwoFingerSwipe {
+    /* display: none; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    transform: scale(0) translate(-50%, -50%);
+    color: white;
+    backdrop-filter: blur(0.7rem);
+    animation: animShowTwoFingers 1.5s normal;
+}
+
+.showTwoFingerSwipe img {
+    width: 6rem;
+}
+
+@keyframes animShowTwoFingers {
+    0% {
+        /* display: block; */
+        background: rgba(0, 0, 0, 0.3);
+        transform: scale(1) translate(-50%, -50%);
+        opacity: 0.8;
+    }
+
+    60% {
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 1;
+
+    }
+
+    99% {
+        opacity: 0;
+        background: rgba(0, 0, 0, 0.3);
+        transform: scale(1) translate(-50%, -50%);
+    }
+
+    100% {
+        background: rgba(0, 0, 0, 0);
+        transform: scale(0) translate(-50%, -50%);
+        /* display: none; */
+    }
+}
+
 .mainContent {
     position: relative;
     /* position: fixed; */
