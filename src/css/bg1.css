@@ -11,7 +11,17 @@ body {
     background-blend-mode: difference;
 }
 
+.mainBigDiv {
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    transition: 0.2s all ease-out;
+
+    /* scroll-behavior:smooth; */
+
+}
+
 .fullbg1 {
+    position: relative;
     animation: scroll 100s linear infinite;
     /* background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"),
         #111111; */
@@ -19,17 +29,27 @@ body {
     /* color: #eee; */
 
     height: calc(100vh);
+
     /* background-image: ; */
     /* min-width: 360px; */
-    width: 100vw;
+    width: 300vw;
     display: flex;
     justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
-    overflow-y: auto;
+    align-items: start;
+    /* overflow-x: auto;
+    overflow-y: auto; */
+    scroll-snap-type: x mandatory;
     /* perspective: 1000px; */
     /* background-size: cover; */
     /* perspective-origin: 50% 50%; */
+}
+
+.mainBigDiv::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 /* @keyframes scroll {

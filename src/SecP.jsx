@@ -48,6 +48,13 @@ export default function SecP() {
 
     const [currApp, setCurrApp] = useState(0);
 
+    const [windowSize, setWindowSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight
+    });
+
+    const [scrolledL, setScrolledL] = useState(0);
+
     function delayTime(millisec) {
         return new Promise(resolve => {
             setTimeout(() => { resolve('') }, millisec);
@@ -55,21 +62,49 @@ export default function SecP() {
     }
 
     useEffect(() => {
+        retId("mainBigDivId").style.scrollBehavior = "auto";
+        retId("idMainContent").scrollIntoView();
+        retId("mainBigDivId").style.scrollBehavior = "smooth";
+    }, [])
+
+    useEffect(() => {
         const dapp = currApp;
-        if (dapp == 0) {
-            for (var i = 1; i < 5; i++) {
-                if (retId(`idTaskBt${i}`)) {
-                    retId(`idTaskBt${i}`).disabled = false;
-                    retId(`taskOutB${i}`).classList.add("tasksApp");
-                    retId(`idTaskBt${i}`).classList.remove("activetaskBt");
-                }
+        // console.log(dapp);
+        // if (dapp == 0) {
+        for (var i = 1; i < 5; i++) {
+            if (retId(`idTaskBt${i}`)) {
+                retId(`idTaskBt${i}`).disabled = false;
+                retId(`taskOutB${i}`).classList.add("tasksApp");
+                retId(`idTaskBt${i}`).classList.remove("activetaskBt");
             }
-            return;
         }
-        retId(`idTaskBt${dapp}`).disabled = true;
-        retId(`taskOutB${dapp}`).classList.remove("tasksApp");
-        retId(`idTaskBt${dapp}`).classList.add("activetaskBt");
+        // return;
+        // }
+        if (retId(`idTaskBt${dapp}`)) {
+            retId(`idTaskBt${dapp}`).disabled = true;
+
+            retId(`idTaskBt${dapp}`).classList.add("activetaskBt");
+        }
+        if (retId(`taskOutB${dapp}`)) {
+            retId(`taskOutB${dapp}`).classList.remove("tasksApp");
+        }
+
     }, [currApp]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     async function setDefaultAppPos() {
         const dApp = currApp;
@@ -81,21 +116,23 @@ export default function SecP() {
 
         // }
         else if (dApp == 2) {
+            retId("idWhyMe").scrollIntoView()
             // window.alert(dApp);
-            retId("idWorkOffer").classList.add("goLeft");
-            await delayTime(200);
-            retId("idMainContent").classList.remove("goRight");
+            // retId("idWorkOffer").classList.add("goLeft");
+            // await delayTime(200);
+            // retId("idMainContent").classList.remove("goRight");
+
         }
         else if (dApp == 3) {
-
+            retId("idWorkOffer").scrollIntoView()
             // delayTime(100);
-            retId("idWhyMe").classList.add("goRight");
-            await delayTime(200);
-            retId("idMainContent").classList.remove("goLeft");
+            // retId("idWorkOffer").classList.add("goRight");
+            // await delayTime(200);
+            // retId("idMainContent").classList.remove("goLeft");
         }
         retId(`idTaskBt${dApp}`).disabled = false;
-        retId(`taskOutB${dApp}`).classList.add("tasksApp");
-        retId(`idTaskBt${dApp}`).classList.remove("activetaskBt");
+        // retId(`taskOutB${dApp}`).classList.add("tasksApp");
+        // retId(`idTaskBt${dApp}`).classList.remove("activetaskBt");
         // await delayTime(300);
     }
 
@@ -104,59 +141,86 @@ export default function SecP() {
     // const router = useRouter();
     const navigate = useNavigate();
 
+    function changeTaskHighlightOnScroll() {
+
+        for (var i = 1; i < 5; i++) {
+            if (retId(`idTaskBt${i}`)) {
+                retId(`idTaskBt${i}`).disabled = false;
+                retId(`taskOutB${i}`).classList.add("tasksApp");
+                retId(`idTaskBt${i}`).classList.remove("activetaskBt");
+            }
+        }
+        var prevScroll = scrolledL;
+        var scrLeft = retId("mainBigDivId").scrollLeft;
+        setScrolledL(scrLeft);
+        if (scrLeft <= prevScroll && scrLeft < windowSize.width) {
+            retId(`idTaskBt2`).disabled = true;
+
+            retId(`idTaskBt2`).classList.add("activetaskBt");
+
+            retId(`taskOutB2`).classList.remove("tasksApp");
+        }
+        else if (scrLeft >= prevScroll && scrLeft > windowSize.width) {
+            retId(`idTaskBt3`).disabled = true;
+
+            retId(`idTaskBt3`).classList.add("activetaskBt");
+
+            retId(`taskOutB3`).classList.remove("tasksApp");
+        }
+    }
+
 
     return (<>
-        <div className="divf fdirc fullbg1">
-            <div id="idMainContent" className="divf mainContent">
-                <MainContent />
-            </div>
-            <div id="idLetsConnect" className="divf notifY closeNotif">
-                <div className="notContent">
-                    <p className="letsConnectLinkText" style={{ width: "100%", marginBottom: "1rem" }} >/in/yash-chauhan-180031203/</p>
-                    <Link className="notBt notBtSuccess fullWidth" style={{ width: "100%", marginTop: "1rem" }}
-                        onClick={() => {
-                            retId("idLetsConnect").classList.add("closeNotif");
-                            // setCurrApp(0);
-                        }}
-                        to="https://www.linkedin.com/in/yash-chauhan-180031203/"
-                        target="_blank"
-                    >Lets Connect on Linkedin</Link>
+        <div id="mainBigDivId" className="mainBigDiv" style={{ overflow: "auto", scrollSnapType: "x mandatory" }}
+            onScroll={(e) => { changeTaskHighlightOnScroll() }}
+        >
+            <div className="  fullbg1">
+                <div id="idMainContent" className="divf mainContent">
+                    <MainContent />
                 </div>
-            </div>
-            <div id="idWorkOffer" className="divf fullWorkOffer allBigApps goLeft">
-                <button className="backToHome"
-                    onClick={() => {
-                        setCurrApp(0);
-                        retId("idMainContent").classList.remove("goRight");
-                        retId("idWorkOffer").classList.add("goLeft");
-                    }}
-                >Back to Home <FontAwesomeIcon icon={faArrowRight} /></button>
-                <WorkOffer />
-            </div>
-            <div id="idWhyMe" className="divf fullWhyMebg allBigApps goRight">
-                <button className="backLeftPlace backToHome"
-                    onClick={() => {
-                        setCurrApp(0);
-                        retId("idMainContent").classList.remove("goLeft");
-                        retId("idWhyMe").classList.add("goRight");
+                <div id="idLetsConnect" className="divf notifY closeNotif">
+                    <div className="notContent">
+                        <p className="letsConnectLinkText" style={{ width: "100%", marginBottom: "1rem" }} >/in/yash-chauhan-180031203/</p>
+                        <Link className="notBt notBtSuccess fullWidth" style={{ width: "100%", marginTop: "1rem" }}
+                            onClick={() => {
+                                retId("idLetsConnect").classList.add("closeNotif");
+                                // setCurrApp(0);
+                            }}
+                            to="https://www.linkedin.com/in/yash-chauhan-180031203/"
+                            target="_blank"
+                        >Lets Connect on Linkedin</Link>
+                    </div>
+                </div>
+                <div id="idWorkOffer" className="divf fullWorkOffer allBigApps goLeft order1">
+                    <button className="backToHome"
+                        onClick={() => {
+                            retId("idMainContent").scrollIntoView();
+                        }}
+                    >Back to Home <FontAwesomeIcon icon={faArrowRight} /></button>
+                    <WorkOffer />
+                </div>
+                <div id="idWhyMe" className="divf fullWhyMebg allBigApps goRight order3">
+                    <button className="backLeftPlace backToHome"
+                        onClick={() => {
+                            retId("idMainContent").scrollIntoView();
 
-                    }}
-                ><FontAwesomeIcon icon={faArrowLeft} /> Back to Home</button>
-                <WhyMe />
-            </div>
-            <div id="idLetsLearn" className="divf notifY closeNotif">
-                <div className="notContent">
-                    <p className="notiP1" >Coming soon</p>
-                    <button className="notBt notBtSuccess"
-                        onClick={() => {
-                            retId("idLetsLearn").classList.add("closeNotif");
-                            // setCurrApp(0);
                         }}
-                    >OK</button>
+                    ><FontAwesomeIcon icon={faArrowLeft} /> Back to Home</button>
+                    <WhyMe />
                 </div>
-            </div>
-            {/* <div className="" */}
-            {/* <div className="fullAnim">
+                <div id="idLetsLearn" className="divf notifY closeNotif">
+                    <div className="notContent">
+                        <p className="notiP1" >Coming soon</p>
+                        <button className="notBt notBtSuccess"
+                            onClick={() => {
+                                retId("idLetsLearn").classList.add("closeNotif");
+                                // setCurrApp(0);
+                            }}
+                        >OK</button>
+                    </div>
+                </div>
+                {/* <div className="" */}
+                {/* <div className="fullAnim">
                 <div className="anim a1"></div>
                 <div className="anim a2"></div>
                 <div className="anim a3"></div>
@@ -169,88 +233,92 @@ export default function SecP() {
                     <Link to="/"><FontAwesomeIcon icon={faInstagram} /></Link>
                 </div>
             </div> */}
-            <div className="divf footerPC">
-                <div className="divf fdirc mypcDiv">
-                    <p className="mypc">My Personal Computer</p>
-                    <p className="myname">Yash Kamlesh Chauhan</p>
-                </div>
-                <div className="divf " style={{ flexGrow: 1, background: "transparent" }}>
-                    <div className="divf taskButs">
-                        {/* <button className="taskB1">Connect with me!<span></span></button>
-                    <button className="taskB1">I have some work for you!<span></span></button> */}
-                        {/* <BootstrapTooltip title="Connect with me!"> */}
-                        <div id="taskOutB1" className="tasksApp">
-                            <button className="divf ttb1 taskB1"
-                                id="idTaskBt1"
-                                onClick={async () => {
-                                    // setCurrApp(4);
-                                    retId("idLetsConnect").classList.remove("closeNotif");
-                                    return;
-                                    // await setDefaultAppPos()
-                                }}
-                            ><img className="footTaskIcon" src={ConnectImg} /><span></span></button>
-                            <div className="ttoolTip">Connect with me!</div>
-                        </div>
-                        <div id="taskOutB2" className="tasksApp">
-                            <button className="divf ttb1 taskB1"
-                                id="idTaskBt2"
-                                onClick={async () => {
-                                    await setDefaultAppPos()
-                                    setCurrApp(2);
-                                    // delayTime(1000);
-                                    retId("idMainContent").classList.add("goRight");
-
-                                    retId("idWorkOffer").classList.remove("goLeft");
-
-                                    // retId("idTaskBtWorkOffer")
-                                }}
-                            ><img className="footTaskIcon" src={EmailImg} /><span></span></button>
-                            <div className="ttoolTip">Open to Work</div>
-                        </div>
-                        <div id="taskOutB3" className="tasksApp">
-                            <button className="divf ttb1 taskB1"
-                                id="idTaskBt3"
-                                onClick={async () => {
-                                    await setDefaultAppPos()
-                                    // delayTime(1000);
-                                    setCurrApp(3);
-                                    retId("idMainContent").classList.add("goLeft");
-
-                                    retId("idWhyMe").classList.remove("goRight");
-
-                                    // retId("idTaskBtWorkOffer")
-                                }}
-                            ><img className="footTaskIcon" src={DiamondImg} /><span></span></button>
-                            <div className="ttoolTip">Why me?</div>
-                        </div>
-                        <div id="taskOutB4" className="tasksApp">
-                            <button
-                                id="idTaskBt4"
-                                className="divf ttb1 taskB1"
-                                onClick={async () => {
-                                    // setCurrApp(4);
-                                    retId("idLetsLearn").classList.remove("closeNotif");
-                                    return;
-                                    // await setDefaultAppPos()
-                                }}
-                            ><img className="footTaskIcon" src={LearnImg} /><span></span></button>
-                            <div className="ttoolTip">Let's learn together!</div>
-                        </div>
-                        {/* </BootstrapTooltip> */}
-
-
-
-
-
-                        {/* <button className="taskB1">Let's learn together<span></span></button> */}
-
+                <div className="divf footerPC">
+                    <div className="divf fdirc mypcDiv">
+                        <p className="mypc">My Personal Computer</p>
+                        <p className="myname">Yash Kamlesh Chauhan</p>
                     </div>
-                </div>
+                    <div className="divf " style={{ flexGrow: 1, background: "transparent" }}>
+                        <div className="divf taskButs">
+                            {/* <button className="taskB1">Connect with me!<span></span></button>
+                    <button className="taskB1">I have some work for you!<span></span></button> */}
+                            {/* <BootstrapTooltip title="Connect with me!"> */}
+                            <div id="taskOutB1" className="tasksApp">
+                                <button className="divf ttb1 taskB1"
+                                    id="idTaskBt1"
+                                    onClick={async () => {
+                                        // setCurrApp(1);
+                                        retId("idLetsConnect").classList.remove("closeNotif");
+                                        return;
+                                        // await setDefaultAppPos()
+                                    }}
+                                ><img className="footTaskIcon" src={ConnectImg} /><span></span></button>
+                                <div className="ttoolTip">Connect with me!</div>
+                            </div>
+                            <div id="taskOutB2" className="tasksApp">
+                                <button className="divf ttb1 taskB1"
+                                    id="idTaskBt2"
+                                    onClick={async () => {
+                                        // await setDefaultAppPos()
+                                        setCurrApp(2);
+                                        retId("idWorkOffer").scrollIntoView()
+                                        // retId(`idTaskBt2`).disabled = false;
+                                        // delayTime(1000);
+                                        // retId("idMainContent").classList.add("goRight");
 
-                <div id="idCurrentTime" className="currTime">14:48:11</div>
+                                        // retId("idWorkOffer").classList.remove("goLeft");
+
+                                        // retId("idTaskBtWorkOffer")
+                                    }}
+                                ><img className="footTaskIcon" src={EmailImg} /><span></span></button>
+                                <div className="ttoolTip">Open to Work</div>
+                            </div>
+                            <div id="taskOutB3" className="tasksApp">
+                                <button className="divf ttb1 taskB1"
+                                    id="idTaskBt3"
+                                    onClick={async () => {
+                                        // await setDefaultAppPos()
+                                        // delayTime(1000);
+                                        setCurrApp(3);
+                                        retId("idWhyMe").scrollIntoView()
+                                        // retId(`idTaskBt3`).disabled = false;
+                                        // retId("idMainContent").classList.add("goLeft");
+
+                                        // retId("idWhyMe").classList.remove("goRight");
+
+                                        // retId("idTaskBtWorkOffer")
+                                    }}
+                                ><img className="footTaskIcon" src={DiamondImg} /><span></span></button>
+                                <div className="ttoolTip">Why me?</div>
+                            </div>
+                            <div id="taskOutB4" className="tasksApp">
+                                <button
+                                    id="idTaskBt4"
+                                    className="divf ttb1 taskB1"
+                                    onClick={async () => {
+                                        // setCurrApp(4);
+                                        retId("idLetsLearn").classList.remove("closeNotif");
+                                        return;
+                                        // await setDefaultAppPos()
+                                    }}
+                                ><img className="footTaskIcon" src={LearnImg} /><span></span></button>
+                                <div className="ttoolTip">Let's learn together!</div>
+                            </div>
+                            {/* </BootstrapTooltip> */}
+
+
+
+
+
+                            {/* <button className="taskB1">Let's learn together<span></span></button> */}
+
+                        </div>
+                    </div>
+
+                    <div id="idCurrentTime" className="currTime">14:48:11</div>
+                </div>
             </div>
         </div>
-
     </>)
 
 }

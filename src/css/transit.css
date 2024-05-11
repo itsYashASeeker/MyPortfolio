@@ -1,6 +1,7 @@
 .allBigApps {
-    position: fixed;
-    top: 0;
+    position: relative;
+    /* position: fixed;
+    top: 0; */
     width: 100vw;
     height: calc(100% - 5rem);
     transition: 0.3s all ease-out;
@@ -33,18 +34,18 @@
 
 .goLeft {
     /* right: 100%; */
-    transform: translateX(-100%);
+    /* transform: translateX(-100%); */
 }
 
 .goRight {
     /* left: 100%; */
-    transform: translateX(100%);
+    /* transform: translateX(100%); */
 }
 
 .goUp {
-    bottom: 100%;
+    /* bottom: 100%; */
 }
 
 .goDown {
-    top: 100%;
+    /* top: 100%; */
 }

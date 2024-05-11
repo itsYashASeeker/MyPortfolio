@@ -42,6 +42,11 @@ export default function MainContent() {
 
     const [currAppId, setCurrAppId] = useState();
 
+    const [windowSize, setWindowSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight
+    });
+
     var softList = [
         ["idProjectFolder", "idProjectSC"],
         ["idExperienceFolder", "idExperienceSC"],
@@ -82,11 +87,28 @@ export default function MainContent() {
     }, []);
 
     useEffect(() => {
+        const handleResize = () => {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+        };
 
+        window.addEventListener('resize', handleResize);
 
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    useEffect(() => {
+
+        // console.log(windowSize);
         softList.forEach((el) => {
             if (retId(el[0])) {
                 const projectF = retId(el[0]).getBoundingClientRect();
+                // console.log(projectF.x);
+                // console.log(retId(el[0]).clientWidth);
                 var halfShiftPos = 35;
                 // console.log(retId("idProjectFolder").clientHeight);
                 retId(el[1]).style.top = `${projectF.y + retId(el[0]).clientHeight / 2}px`;
@@ -96,7 +118,7 @@ export default function MainContent() {
         })
 
         // console.log(`Top: ${projectF.x} & Y: ${projectF.y}`);
-    }, []);
+    }, [windowSize]);
 
     function highApp(currId) {
         const currAppIDDum = currAppId;
