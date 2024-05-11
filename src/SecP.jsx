@@ -65,7 +65,7 @@ export default function SecP() {
         retId("mainBigDivId").style.scrollBehavior = "auto";
         retId("idMainContent").scrollIntoView();
         retId("mainBigDivId").style.scrollBehavior = "smooth";
-    }, [])
+    }, [windowSize])
 
     useEffect(() => {
         const dapp = currApp;
