@@ -89,6 +89,7 @@ export default function MainContent() {
     useEffect(() => {
         const handleResize = () => {
             setWindowSize({
+                ...windowSize,
                 width: window.innerWidth,
                 height: window.innerHeight
             });
@@ -105,6 +106,7 @@ export default function MainContent() {
 
         // console.log(windowSize);
         var i = 0;
+        const ws = { ...windowSize };
         softList.forEach((el) => {
             if (retId(el[0])) {
                 const projectF = retId(el[0]).getBoundingClientRect();
@@ -113,15 +115,15 @@ export default function MainContent() {
                 var halfShiftPos = 35;
 
                 // console.log(retId("idProjectFolder").clientHeight);
-                if (projectF.x > windowSize.width) {
-                    projectF.x = -1 * (windowSize.width - projectF.x);
+                if (projectF.x > ws.width) {
+                    projectF.x = -1 * (ws.width - projectF.x);
 
                     // console.log("yooo");
                 }
 
-                if ((projectF.x * -1) > windowSize.width) {
+                if ((projectF.x * -1) > ws.width) {
 
-                    projectF.x = windowSize.width + projectF.x;
+                    projectF.x = ws.width + projectF.x;
                     // console.log(projectF.x);
                     // console.log("yooo");
                 }
@@ -133,7 +135,7 @@ export default function MainContent() {
         })
 
         // console.log(`Top: ${projectF.x} & Y: ${projectF.y}`);
-    }, [windowSize, window.innerWidth]);
+    }, [windowSize, window.innerWidth, window.innerHeight]);
 
     function highApp(currId) {
         const currAppIDDum = currAppId;

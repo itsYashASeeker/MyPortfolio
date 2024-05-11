@@ -69,9 +69,9 @@
     }
 
     .openCard {
-        animation: smoothbounceball 0.1s ease;
-
-        animation-delay: 0.2s;
+        /* animation: smoothbounceball 0.1s ease; */
+        animation: none;
+        /* animation-delay: 0.2s; */
         /* z-index: 10; */
     }
 
