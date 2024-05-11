@@ -176,7 +176,7 @@ a {
     transform: scale(0) translate(-50%, -50%);
     color: white;
     backdrop-filter: blur(0.7rem);
-    animation: animShowTwoFingers 1.5s normal;
+    animation: animShowTwoFingers 2s normal ease-out;
 }
 
 .showTwoFingerSwipe img {
