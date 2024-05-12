@@ -1,6 +1,6 @@
 import { faFigma, faGithub, faInstagram, faJava, faJs, faLinkedin, faNodeJs, faPython, faReact } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MongoLogo from "../../src/assets/mongo2.png";
 import SqlLogo from "../../src/assets/sql.png";
 import SolLogo from "../../src/assets/sol.png";
@@ -49,6 +49,9 @@ export default function MainContent() {
         width: window.innerWidth,
         height: window.innerHeight
     });
+
+    const navigate = useNavigate();
+
 
     var softList = [
         ["idProjectFolder", "idProjectSC"],
@@ -473,8 +476,11 @@ export default function MainContent() {
             >
                 <Draggable
                     handle={`#${softList[6][0]}`}
+                    // handle={"#idDrag1App"}
                     onDrag={() => { posAllWindowsReset(); }}
                     onStop={(e) => { setAppPos({ ...appPos, 1: retId("idDrag1App").style.transform }) }}
+                // disabled={windowSize && windowSize.width < 1000}
+
                 // defaultPosition={sAppPos && sAppPos['1'] ? { x: sAppPos['1'] }}
                 >
                     {/* <div> */}
@@ -484,7 +490,7 @@ export default function MainContent() {
                     // } : {}}
                     >
                         <button id={softList[6][0]} className="divf fdirc folderCard myFolder" onClick={() => { const vas = handleSoft(softList[6][0], softList[6][1], abtOpen); setAbtOpen(vas); }}
-
+                            onTouchEnd={(e) => { e.preventDefault(); const vas = handleSoft(softList[6][0], softList[6][1], abtOpen); setAbtOpen(vas); }}
                         >
                             <div className="divf" style={{ flexGrow: 1 }}>
                                 <img src={MyImage} className="folderI" loading="lazy" draggable="false" />
@@ -500,7 +506,9 @@ export default function MainContent() {
                     onDrag={() => { posAllWindowsReset() }}
                 >
                     <div className="fullWC">
-                        <button id="idProjectFolder" className="divf fdirc folderCard" onClick={() => { const vas = handleSoft("idProjectFolder", "idProjectSC", pOpen); setPOpen(vas); }}>
+                        <button id="idProjectFolder" className="divf fdirc folderCard" onClick={() => { const vas = handleSoft("idProjectFolder", "idProjectSC", pOpen); setPOpen(vas); }}
+                            onTouchEnd={(e) => { e.preventDefault(); const vas = handleSoft("idProjectFolder", "idProjectSC", pOpen); setPOpen(vas); }}
+                        >
                             <div className="divf" style={{ flexGrow: 1 }}>
                                 <img src={FolderIcon} className="folderI" loading="lazy" draggable="false" />
                             </div>
@@ -514,7 +522,9 @@ export default function MainContent() {
                     onDrag={() => { posAllWindowsReset() }}
                 >
                     <div className="fullWC">
-                        <button id="idExperienceFolder" className="divf fdirc folderCard" onClick={() => { const vas = handleSoft("idExperienceFolder", "idExperienceSC", expOpen); setExOpen(vas); }}>
+                        <button id="idExperienceFolder" className="divf fdirc folderCard" onClick={() => { const vas = handleSoft("idExperienceFolder", "idExperienceSC", expOpen); setExOpen(vas); }}
+                            onTouchEnd={(e) => { e.preventDefault(); const vas = handleSoft("idExperienceFolder", "idExperienceSC", expOpen); setExOpen(vas); }}
+                        >
                             <div className="divf" style={{ flexGrow: 1 }}>
                                 <img src={FolderIcon} className="folderI" loading="lazy" draggable="false" />
                             </div>
@@ -528,7 +538,9 @@ export default function MainContent() {
                     onDrag={() => { posAllWindowsReset() }}
                 >
                     <div className="fullWC">
-                        <button id="idEducationFolder" className="divf fdirc folderCard" onClick={() => { const vas = handleSoft("idEducationFolder", "idEducationSC", edOpen); setEdOpen(vas); }}>
+                        <button id="idEducationFolder" className="divf fdirc folderCard" onClick={() => { const vas = handleSoft("idEducationFolder", "idEducationSC", edOpen); setEdOpen(vas); }}
+                            onTouchEnd={(e) => { e.preventDefault(); const vas = handleSoft("idEducationFolder", "idEducationSC", edOpen); setEdOpen(vas); }}
+                        >
                             <div className="divf" style={{ flexGrow: 1 }}>
                                 <img src={FolderIcon} className="folderI" loading="lazy" draggable="false" />
                             </div>
@@ -541,7 +553,9 @@ export default function MainContent() {
                     onDrag={() => { posAllWindowsReset() }}
                 >
                     <div className="fullWC">
-                        <button id={softList[3][0]} className="divf fdirc folderCard" onClick={() => { const vas = handleSoft(softList[3][0], softList[3][1], cerOpen); setCerOpen(vas); }}>
+                        <button id={softList[3][0]} className="divf fdirc folderCard" onClick={() => { const vas = handleSoft(softList[3][0], softList[3][1], cerOpen); setCerOpen(vas); }}
+                            onTouchEnd={(e) => { e.preventDefault(); const vas = handleSoft(softList[3][0], softList[3][1], cerOpen); setCerOpen(vas); }}
+                        >
                             <div className="divf" style={{ flexGrow: 1 }}>
                                 <img src={FolderIcon} className="folderI" loading="lazy" draggable="false" />
                             </div>
@@ -558,7 +572,9 @@ export default function MainContent() {
                     onDrag={() => { posAllWindowsReset() }}
                 >
                     <div className="fullWC">
-                        <button id={softList[4][0]} className="divf fdirc folderCard" onClick={() => { const vas = handleSoft(softList[4][0], softList[4][1], volOpen); setVolOpen(vas); }}>
+                        <button id={softList[4][0]} className="divf fdirc folderCard" onClick={() => { const vas = handleSoft(softList[4][0], softList[4][1], volOpen); setVolOpen(vas); }}
+                            onTouchEnd={(e) => { e.preventDefault(); const vas = handleSoft(softList[4][0], softList[4][1], volOpen); setVolOpen(vas); }}
+                        >
                             <div className="divf" style={{ flexGrow: 1 }}>
                                 <img src={FolderIcon} className="folderI" loading="lazy" draggable="false" />
                             </div>
@@ -572,7 +588,9 @@ export default function MainContent() {
                     onDrag={() => { posAllWindowsReset() }}
                 >
                     <div className="fullWC">
-                        <button id={softList[5][0]} className="divf fdirc folderCard" onClick={() => { const vas = handleSoft(softList[5][0], softList[5][1], skOpen); setSkOpen(vas); }}>
+                        <button id={softList[5][0]} className="divf fdirc folderCard" onClick={() => { const vas = handleSoft(softList[5][0], softList[5][1], skOpen); setSkOpen(vas); }}
+                            onTouchEnd={(e) => { e.preventDefault(); const vas = handleSoft(softList[5][0], softList[5][1], skOpen); setSkOpen(vas); }}
+                        >
                             <div className="divf" style={{ flexGrow: 1 }}>
                                 <img src={FolderIcon} className="folderI" loading="lazy" draggable="false" />
                             </div>
@@ -589,7 +607,9 @@ export default function MainContent() {
                     <div className="fullWC">
                         <Link id="idResumeLinkFolder" target="_blank" to="https://drive.google.com/file/d/19uWSyr2r4wcbVQa1pVHONiXr_Lj2YIUn/view?usp=sharing"
                             draggable="false"
-                            className="divf fdirc folderCard">
+                            className="divf fdirc folderCard"
+                            onTouchEnd={(e) => { e.preventDefault(); retId("idResumeLinkFolder").click() }}
+                        >
                             <div className="divf" style={{ flexGrow: 1 }}>
                                 <img src={ResumeIcon} className="folderI" loading="lazy" draggable="false" />
                             </div>
