@@ -456,7 +456,7 @@ export default function MainContent() {
                 <div className="divf fullWC">
                     <button id={softList[6][0]} className="divf fdirc folderCard myFolder" onClick={() => { const vas = handleSoft(softList[6][0], softList[6][1], abtOpen); setAbtOpen(vas); }}>
                         <div className="divf" style={{ flexGrow: 1 }}>
-                            <img src={MyImage} className="folderI" />
+                            <img src={MyImage} className="folderI" loading="lazy" />
                         </div>
 
                         <p>About me</p>
@@ -465,28 +465,28 @@ export default function MainContent() {
 
                 <button id="idProjectFolder" className="divf fdirc folderCard" onClick={() => { const vas = handleSoft("idProjectFolder", "idProjectSC", pOpen); setPOpen(vas); }}>
                     <div className="divf" style={{ flexGrow: 1 }}>
-                        <img src={FolderIcon} className="folderI" />
+                        <img src={FolderIcon} className="folderI" loading="lazy" />
                     </div>
 
                     <p className="folderName">Projects</p>
                 </button>
                 <button id="idExperienceFolder" className="divf fdirc folderCard" onClick={() => { const vas = handleSoft("idExperienceFolder", "idExperienceSC", expOpen); setExOpen(vas); }}>
                     <div className="divf" style={{ flexGrow: 1 }}>
-                        <img src={FolderIcon} className="folderI" />
+                        <img src={FolderIcon} className="folderI" loading="lazy" />
                     </div>
 
                     <p className="folderName">Experience</p>
                 </button>
                 <button id="idEducationFolder" className="divf fdirc folderCard" onClick={() => { const vas = handleSoft("idEducationFolder", "idEducationSC", edOpen); setEdOpen(vas); }}>
                     <div className="divf" style={{ flexGrow: 1 }}>
-                        <img src={FolderIcon} className="folderI" />
+                        <img src={FolderIcon} className="folderI" loading="lazy" />
                     </div>
 
                     <p className="folderName">Education</p>
                 </button>
                 <button id={softList[3][0]} className="divf fdirc folderCard" onClick={() => { const vas = handleSoft(softList[3][0], softList[3][1], cerOpen); setCerOpen(vas); }}>
                     <div className="divf" style={{ flexGrow: 1 }}>
-                        <img src={FolderIcon} className="folderI" />
+                        <img src={FolderIcon} className="folderI" loading="lazy" />
                     </div>
 
                     <p className="folderName">Certifications</p>
@@ -495,21 +495,21 @@ export default function MainContent() {
             <div className="divf fdirc leftCFolders rightCFolders">
                 <button id={softList[4][0]} className="divf fdirc folderCard" onClick={() => { const vas = handleSoft(softList[4][0], softList[4][1], volOpen); setVolOpen(vas); }}>
                     <div className="divf" style={{ flexGrow: 1 }}>
-                        <img src={FolderIcon} className="folderI" />
+                        <img src={FolderIcon} className="folderI" loading="lazy" />
                     </div>
 
                     <p className="folderName">Volunteering</p>
                 </button>
                 <button id={softList[5][0]} className="divf fdirc folderCard" onClick={() => { const vas = handleSoft(softList[5][0], softList[5][1], skOpen); setSkOpen(vas); }}>
                     <div className="divf" style={{ flexGrow: 1 }}>
-                        <img src={FolderIcon} className="folderI" />
+                        <img src={FolderIcon} className="folderI" loading="lazy" />
                     </div>
 
                     <p className="folderName">Skills</p>
                 </button>
                 <Link target="_blank" to="https://drive.google.com/file/d/19uWSyr2r4wcbVQa1pVHONiXr_Lj2YIUn/view?usp=sharing" className="divf fdirc folderCard">
                     <div className="divf" style={{ flexGrow: 1 }}>
-                        <img src={ResumeIcon} className="folderI" />
+                        <img src={ResumeIcon} className="folderI" loading="lazy" />
                     </div>
 
                     <p className="folderName">Resume</p>

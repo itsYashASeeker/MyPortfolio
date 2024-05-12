@@ -176,7 +176,7 @@ export default function SecP() {
             onScroll={(e) => { changeTaskHighlightOnScroll() }}
         >
             <div className="divf fdirc showTwoFingerSwipe">
-                <img src={SwipeTwoFingers} alt="Swipe-Two-Fingers" />
+                <img src={SwipeTwoFingers} alt="Swipe-Two-Fingers" loading="lazy" />
                 <p>Swipe with two fingers to switch windows!</p>
             </div>
             <div className="  fullbg1">
@@ -257,7 +257,7 @@ export default function SecP() {
                                         return;
                                         // await setDefaultAppPos()
                                     }}
-                                ><img className="footTaskIcon" src={ConnectImg} /><span></span></button>
+                                ><img className="footTaskIcon" src={ConnectImg} loading="lazy" /><span></span></button>
                                 <div className="ttoolTip">Connect with me!</div>
                             </div>
                             <div id="taskOutB2" className="tasksApp">
@@ -275,7 +275,7 @@ export default function SecP() {
 
                                         // retId("idTaskBtWorkOffer")
                                     }}
-                                ><img className="footTaskIcon" src={EmailImg} /><span></span></button>
+                                ><img className="footTaskIcon" src={EmailImg} loading="lazy" /><span></span></button>
                                 <div className="ttoolTip">Open to Work</div>
                             </div>
                             <div id="taskOutB3" className="tasksApp">
@@ -293,7 +293,7 @@ export default function SecP() {
 
                                         // retId("idTaskBtWorkOffer")
                                     }}
-                                ><img className="footTaskIcon" src={DiamondImg} /><span></span></button>
+                                ><img className="footTaskIcon" src={DiamondImg} loading="lazy" /><span></span></button>
                                 <div className="ttoolTip">Why me?</div>
                             </div>
                             <div id="taskOutB4" className="tasksApp">
@@ -306,7 +306,7 @@ export default function SecP() {
                                         return;
                                         // await setDefaultAppPos()
                                     }}
-                                ><img className="footTaskIcon" src={LearnImg} /><span></span></button>
+                                ><img className="footTaskIcon" src={LearnImg} loading="lazy" /><span></span></button>
                                 <div className="ttoolTip">Let's learn together!</div>
                             </div>
                             {/* </BootstrapTooltip> */}
