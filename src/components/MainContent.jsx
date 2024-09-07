@@ -212,9 +212,9 @@ export default function MainContent() {
                                 <div className="divf fdirc aboutMeD ">
                                     <p>Hey, I am Yash!</p>
                                     <p>A Developer from Mumbai.</p>
-                                    <p>I have a keen interest in Blockchain & Web Development.</p>
-                                    <p>You can call me a web3 developer {":)"} </p>
-                                    <p>I like reading books, cooking, playing chess...</p>
+                                    <p>I have a keen interest in Blockchain, Machine Learning & Web Development.</p>
+                                    {/* <p>You can call me a web3 developer {":)"} </p> */}
+                                    {/* <p>I like reading books, cooking, playing chess...</p> */}
                                     <div className="divf socialLinks">
                                         {/* <Link to="/"><FontAwesomeIcon icon={faGithub} /></Link> */}
                                         <Link target="_blank" to="https://github.com/itsYashASeeker"><FontAwesomeIcon icon={faGithub} /></Link>
