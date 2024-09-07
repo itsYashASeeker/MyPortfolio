@@ -176,7 +176,7 @@ a {
     transform: scale(0) translate(-50%, -50%);
     color: white;
     backdrop-filter: blur(0.7rem);
-    animation: animShowTwoFingers 3s normal ease-out;
+    animation: animShowTwoFingers 1.5s normal ease-out;
 }
 
 .showTwoFingerSwipe img {
@@ -518,7 +518,7 @@ a {
 }
 
 .openCard .c1 {
-    animation: showglow 0.3s ease-out;
+    /* animation: showglow 0.3s ease-out; */
 
 }
 
@@ -672,4 +672,32 @@ a {
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(0.05rem);
     box-shadow: 0 0 0.4rem 0.1rem rgb(97, 97, 97);
+}
+
+div.clickEffect {
+    position: fixed;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    animation: clickEffect 0.4s ease-out;
+    z-index: 99999;
+}
+
+@keyframes clickEffect {
+    0% {
+        opacity: 1;
+        width: 0.1rem;
+        height: 0.1rem;
+        margin: -0.1rem;
+        border-width: 0.5em;
+    }
+
+    100% {
+        opacity: 0.2;
+        width: 3rem;
+        height: 3rem;
+        margin: -1.5rem;
+        border-width: 0.03em;
+    }
 }

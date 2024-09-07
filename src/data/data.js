@@ -37,11 +37,22 @@ export const projects = [
 ];
 
 export const experience = [
-
+    {
+        jobRole: "Software Developer - Intern",
+        company: "PenguinApps",
+        timeline: "Jun 2024 - Ongoing",
+        linkToCompany: "https://penguinapps.tech/"
+    },
+    {
+        jobRole: "Coding Tutor - Intern",
+        company: "CodeKaroYaaro",
+        timeline: "Nov 2023 - Ongoing",
+        linkToCompany: "https://www.codekaroyaaro.com/"
+    },
     {
         jobRole: "Full Stack Developer - Intern",
         company: "Autowhat",
-        timeline: "Jan 2024 - Ongoing",
+        timeline: "Jan 2024 - May 2024",
         linkToCompany: "https://www.autowhat.app/"
     },
     {
@@ -49,12 +60,6 @@ export const experience = [
         company: "Healiom",
         timeline: "Mar 2024 - Apr 2024",
         linkToCompany: "https://www.healiom.com"
-    },
-    {
-        jobRole: "Coding Tutor - Intern",
-        company: "CodeKaroYaaro",
-        timeline: "Nov 2023 - Ongoing",
-        linkToCompany: "https://www.codekaroyaaro.com/"
     },
     {
         jobRole: "Project Intern",

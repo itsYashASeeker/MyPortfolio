@@ -3,6 +3,7 @@ import Home from "./Home"
 import SecP from "./SecP"
 import "../src/css/App.css";
 import axios from "axios";
+import ParticlesComponent from "./components/Particles";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
 
         {/* <Route exact path="/r" element={<Home />} /> */}
         <Route exact path="/" element={<SecP />} />
+        {/* <Route exact path="/" element={<ParticlesComponent />} /> */}
         <Route path="*" element={<RedirectHome />} />
       </Routes>
     </BrowserRouter>
