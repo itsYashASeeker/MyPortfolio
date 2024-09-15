@@ -146,9 +146,9 @@ export default function MainContent() {
 
     // }, [appPos]);
 
-    useEffect(() => {
-        console.log(sAppPos);
-    }, [sAppPos])
+    // useEffect(() => {
+    //     console.log(sAppPos);
+    // }, [sAppPos])
 
     function highApp(currId) {
         const currAppIDDum = currAppId;
