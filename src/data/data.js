@@ -38,6 +38,24 @@ export const projects = [
 
 export const experience = [
     {
+        jobRole: "SDE - 1",
+        company: "Flexmoney",
+        timeline: "Sept 2025 - Ongoing",
+        linkToCompany: "hhttps://www.flexmoney.in/"
+    },
+    {
+        jobRole: "SDE - Intern",
+        company: "Flexmoney",
+        timeline: "Mar 2025 - Aug 2025",
+        linkToCompany: "https://www.flexmoney.in/"
+    },
+    {
+        jobRole: "Blockchain Developer - Intern",
+        company: "BlockIntelligence",
+        timeline: "Jun 2024 - Ongoing",
+        linkToCompany: "https://www.blockintelligence.io/"
+    },
+    {
         jobRole: "Software Developer - Intern",
         company: "PenguinApps",
         timeline: "Jun 2024 - Ongoing",
@@ -73,17 +91,17 @@ export const education = [
     {
         degree: "B.Tech Computer Science",
         institute: "KJ Somaiya Institute of Technology",
-        timeline: "Dec,2021 - Ongoing"
+        timeline: "Completed 2025"
     },
     {
         degree: "12th Science(HSC)",
         institute: "KJ Somaiya Junior College of Science and Commerce",
-        timeline: "Completed Aug,2021"
+        timeline: "Completed 2021"
     },
     {
         degree: "10th(SSC)",
         institute: "St. Joseph's High School",
-        timeline: "Completed Mar,2019"
+        timeline: "Completed 2019"
     }
 ]
 

@@ -1,26 +1,25 @@
 import { faFigma, faGithub, faInstagram, faJava, faJs, faLinkedin, faNodeJs, faPython, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faArrowUpRightFromSquare, faCode, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from "react-router-dom";
-import MongoLogo from "../../src/assets/mongo2.png";
-import SqlLogo from "../../src/assets/sql.png";
-import SolLogo from "../../src/assets/sol.png";
-import NextLogo from "../../src/assets/nextjs.png";
 import CanvaLogo from "../../src/assets/canva.png";
 import DjangoRestLogo from "../../src/assets/django-rest.png";
-import { faArrowUpRightFromSquare, faCancel, faCode, faCross, faXmark } from "@fortawesome/free-solid-svg-icons";
-import "../css/anim.css";
-import "../css/index.css";
-import "../css/bg1.css";
-import "../css/index2.css";
-import "../css/notify.css";
-import "../css/media.css";
+import MongoLogo from "../../src/assets/mongo2.png";
+import NextLogo from "../../src/assets/nextjs.png";
+import SolLogo from "../../src/assets/sol.png";
+import SqlLogo from "../../src/assets/sql.png";
 import FolderIcon from "../assets/folder.png";
 import ResumeIcon from "../assets/resumeIcon.jpg";
-import GrabIcon from "../assets/grab.png";
+import "../css/anim.css";
+import "../css/bg1.css";
+import "../css/index.css";
+import "../css/index2.css";
+import "../css/media.css";
+import "../css/notify.css";
 // import MyImage from "./assets/Yash Kamlesh Chauhan 2.png";
-import MyImage from "../assets/yash1.png";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Draggable from "react-draggable";
+import MyImage from "../assets/yash1.png";
 import { certifications, education, experience, projects, volunteering } from "../data/data";
 
 
@@ -210,11 +209,9 @@ export default function MainContent() {
                                     <p className="mH handle">#ABOUT ME</p>
                                 </div>
                                 <div className="divf fdirc aboutMeD ">
-                                    <p>Hey, I am Yash!</p>
-                                    <p>A Developer from Mumbai.</p>
-                                    <p>I have a keen interest in Blockchain, Machine Learning & Web Development.</p>
-                                    {/* <p>You can call me a web3 developer {":)"} </p> */}
-                                    {/* <p>I like reading books, cooking, playing chess...</p> */}
+                                    <p>A passionate Software Developer, sometimes experimenting with hardwares and low-level integrations.</p>
+                                    <p>Experienced in building Mobile Apps in React Native, efficient backend systems in Node, Django, Springboot.</p>
+                                    <p>Filled with passion for Machine learning, blockchain.</p>
                                     <div className="divf socialLinks">
                                         {/* <Link to="/"><FontAwesomeIcon icon={faGithub} /></Link> */}
                                         <Link target="_blank" to="https://github.com/itsYashASeeker"><FontAwesomeIcon icon={faGithub} /></Link>
