@@ -32,6 +32,7 @@ export default function Home() {
                         <div className="divf fdirc c1 cSkills">
                             <p className="mH">#SKILLS</p>
                             <div className="divf skillBoxs">
+                                <div className="divf skB"><FontAwesomeIcon icon={faJava} className="fIconS" />Java</div>
                                 <div className="divf skB"><FontAwesomeIcon icon={faReact} className="fIconS" />React</div>
                                 <div className="divf skB"><FontAwesomeIcon icon={faNodeJs} className="fIconS" />Nodejs</div>
                                 <div className="divf skB"><FontAwesomeIcon icon={faPython} className="fIconS" />Python</div>
@@ -42,10 +43,6 @@ export default function Home() {
                                 <div className="divf skB"><img src={DjangoRestLogo} className="fImgS fIconS" />Django Rest Framework</div>
                                 <div className="divf skB"><img src={MongoLogo} className="fImgS fIconS" />Mongodb</div>
                                 <div className="divf skB"><img src={SqlLogo} className="fImgS fIconS" />SQL</div>
-
-
-                                <div className="divf skB"><FontAwesomeIcon icon={faJava} className="fIconS" />Java</div>
-
                             </div>
                         </div>
                         <div className="divf fdirc c1 cSkills">

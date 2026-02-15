@@ -442,22 +442,17 @@ export default function MainContent() {
                                     <p className="mH handle">#SKILLS</p>
                                 </div>
                                 <div className="divf skillBoxs">
+                                    <div className="divf skB"><FontAwesomeIcon icon={faJava} className="fIconS" />Java</div>
                                     <div className="divf skB"><FontAwesomeIcon icon={faReact} className="fIconS" />React</div>
                                     <div className="divf skB"><FontAwesomeIcon icon={faNodeJs} className="fIconS" />Nodejs</div>
                                     <div className="divf skB"><FontAwesomeIcon icon={faPython} className="fIconS" />Python</div>
                                     <div className="divf skB"><img src={SolLogo} className="fImgS fIconS" />Solidity</div>
-                                    <div className="divf skB"><FontAwesomeIcon icon={faJs} className="fIconS" />Javascript</div>
                                     <div className="divf skB"><img src={NextLogo} className="fImgS fIconS" />Nextjs</div>
+                                    <div className="divf skB"><FontAwesomeIcon icon={faJs} className="fIconS" />Javascript</div>
                                     <div className="divf skB"><FontAwesomeIcon icon={faCode} className="fIconS" />DSA</div>
-                                    <div className="divf skB"><FontAwesomeIcon icon={faFigma} className="fIconS" />Figma</div>
-                                    <div className="divf skB"><img src={CanvaLogo} className="fImgS fIconS" />Canva</div>
                                     <div className="divf skB"><img src={DjangoRestLogo} className="fImgS fIconS" />Django Rest Framework</div>
-                                    <div className="divf skB"><img src={MongoLogo} className="fImgS fIconS" />Mongodb</div>
                                     <div className="divf skB"><img src={SqlLogo} className="fImgS fIconS" />SQL</div>
-
-
-                                    <div className="divf skB"><FontAwesomeIcon icon={faJava} className="fIconS" />Java</div>
-
+                                    <div className="divf skB"><img src={MongoLogo} className="fImgS fIconS" />Mongodb</div>
                                 </div>
                             </div>
                         </div>
