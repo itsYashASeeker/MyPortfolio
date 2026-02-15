@@ -25,6 +25,7 @@ import WorkOffer from "./components/WorkOffer";
 import WhyMe from "./components/WhyMe";
 // import { useRouter } from "next/router";
 import { Link, useNavigate } from "react-router-dom";
+import ParticlesComponent from "./components/Particles";
 // import styled from "styled-components";
 // import { Tooltip, tooltipClasses } from "@mui/material";
 // import { Tooltip } from "@mui/material";
@@ -170,20 +171,28 @@ export default function SecP() {
         }
     }
 
-    function clickEffect(e) {
-        var d = document.createElement("div");
-        d.className = "clickEffect";
-        d.style.top = e.clientY + "px"; d.style.left = e.clientX + "px";
-        document.body.appendChild(d);
-        d.addEventListener('animationend', function () { d.parentElement.removeChild(d); }.bind(this));
-    }
-    document.addEventListener('click', clickEffect);
+    useEffect(() => {
+        function clickEffect(e) {
+            var d = document.createElement("div");
+            d.className = "clickEffect";
+            d.style.top = e.clientY + "px"; d.style.left = e.clientX + "px";
+            document.body.appendChild(d);
+            d.addEventListener('animationend', function () { d.parentElement.removeChild(d); }.bind(this));
+        }
 
+        window.addEventListener('click', clickEffect);
+
+        return () => {
+            window.removeEventListener('click', clickEffect);
+        };
+    }, []);
 
     return (<>
+
         <div id="mainBigDivId" className="mainBigDiv" style={{ overflow: "auto", scrollSnapType: "x mandatory" }}
             onScroll={(e) => { changeTaskHighlightOnScroll() }}
         >
+
             <div className="divf fdirc showTwoFingerSwipe">
                 <img src={SwipeTwoFingers} alt="Swipe-Two-Fingers" loading="lazy" />
                 <p>Swipe with two fingers to switch windows!</p>

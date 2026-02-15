@@ -20,7 +20,7 @@ function App() {
 
         {/* <Route exact path="/r" element={<Home />} /> */}
         <Route exact path="/" element={<SecP />} />
-        {/* <Route exact path="/" element={<ParticlesComponent />} /> */}
+        <Route exact path="/p" element={<ParticlesComponent />} />
         <Route path="*" element={<RedirectHome />} />
       </Routes>
     </BrowserRouter>
