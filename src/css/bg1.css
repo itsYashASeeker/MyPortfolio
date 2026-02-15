@@ -3,6 +3,7 @@
 
 body {
     background-image: url("../../src/assets/pp_bg5.jpg");
+    /* background: linear-gradient(176deg, rgba(2, 1, 14, 1) 0%, rgb(37, 37, 39) 35%, rgb(110, 110, 110) 100%); */
 
     background-position: center;
     background-size: cover;
